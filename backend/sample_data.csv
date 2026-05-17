@@ -1,0 +1,501 @@
+transaction_id,date,vendor_name,employee_id,amount,currency,description,invoice_number,department,payment_method
+T00001,2023-10-09,Bulawayo Metals Ltd,EMP003,5500.0,ZIG,Equipment maintenance,INV-0042,Maintenance,EFT
+T00002,2024-06-01,Shell Vendor A,EMP002,324000.0,USD,Advance payment cash only,INV-FRAUD-0001,Procurement,Cash
+T00003,2023-06-09,Chitungwiza Parts,EMP002,9846.06,USD,Equipment maintenance,INV-0050,Operations,Cheque
+T00004,2024-04-15,H@rare Steel Supplies,EMP002,24223.02,USD,Workshop tools,INV-0186,Finance,EFT
+T00005,2023-10-24,Shell Vendor B,EMP002,986550.6,USD,Sole source no tender required,INV-FRAUD-0004,Operations,Cash
+T00006,2023-10-01,Gweru Components,EMP002,31641.55,ZIG,Packaging materials,INV-0274,Finance,Cash
+T00007,2024-10-17,African Procurement Co,EMP006,31029.66,ZIG,Raw materials purchase,INV-0017,Operations,Mobile Money
+T00008,2024-08-03,Chitungwiza Parts,EMP004,39461.27,USD,Safety equipment,INV-0235,Finance,Cheque
+T00009,2024-07-05,Mutare Fabricators,EMP007,11970.82,USD,Packaging materials,INV-0186,Finance,Cash
+T00010,2023-02-18,ZimBuild Materials,EMP003,38777.41,ZIG,Stationery,INV-0033,Maintenance,Mobile Money
+T00011,2023-09-15,Harare Steel Supplies,EMP002,43704.31,USD,Workshop tools,INV-0175,Procurement,Cheque
+T00012,2023-09-27,ZimBuild Materials,EMP009,43740.59,USD,Equipment maintenance,INV-0260,Finance,Cash
+T00013,2024-06-27,Mutare Fabricators,EMP006,41348.51,USD,Safety equipment,INV-0058,Operations,Cheque
+T00014,2024-08-03,Bulawayo Metals Ltd,EMP008,42623.34,ZIG,Equipment maintenance,INV-0065,Finance,Mobile Money
+T00015,2024-06-24,H@rare Steel Supplies,EMP004,39285.0,ZIG,Workshop tools,INV-0160,Maintenance,Cheque
+T00016,2023-05-04,Bulawayo Metals Ltd,EMP006,11306.17,ZIG,Raw materials purchase,INV-0284,Finance,Cash
+T00017,2023-03-02,Shell Vendor A,EMP001,462000.0,USD,Advance payment cash only,INV-FRAUD-0016,Maintenance,Cash
+T00018,2024-08-07,African Procurement Co,EMP008,26014.28,ZIG,Stationery,INV-0049,Procurement,Mobile Money
+T00019,2023-02-25,Gweru Components,EMP002,30366.73,USD,Raw materials purchase,INV-0174,Procurement,Cash
+T00020,2023-05-24,Msasa Trading,EMP008,19100.3,USD,Factory consumables,INV-0227,Procurement,EFT
+T00021,2023-01-16,African Procurement Co,EMP003,43611.03,USD,Stationery,INV-0247,Finance,Mobile Money
+T00022,2023-01-03,Msasa Trading,EMP008,44341.84,USD,Cleaning materials,INV-0285,Maintenance,Cash
+T00023,2023-03-01,Shell Vendor B,EMP001,26147.28,USD,Spare parts,INV-0026,Maintenance,Cash
+T00024,2023-07-10,Shell Vendor B,EMP001,152354.34,USD,Exception waiver approved,INV-FRAUD-0023,Procurement,EFT
+T00025,2024-06-19,Msasa Trading,EMP004,14373.37,ZIG,Spare parts,INV-0136,Maintenance,Cash
+T00026,2023-11-20,Bulawayo Metals Ltd,EMP001,41820.02,ZIG,Safety equipment,INV-0289,Procurement,EFT
+T00027,2023-05-16,Bulawayo Metals Ltd,EMP004,42010.02,USD,Spare parts,INV-0081,Maintenance,Cheque
+T00028,2024-10-31,Gweru Components,EMP009,23896.54,USD,Cleaning materials,INV-0069,Operations,EFT
+T00029,2023-06-09,Mutare Fabricators,EMP004,12401.2,ZIG,Spare parts,INV-0136,Maintenance,Cheque
+T00030,2023-04-05,Msasa Trading,EMP001,28615.94,USD,Raw materials purchase,INV-0067,Operations,Cash
+T00031,2024-03-13,Bulawayo Metals Ltd,EMP002,25328.63,ZIG,Office supplies,INV-0019,Operations,Cash
+T00032,2024-01-09,Harare Steel Supplies,EMP006,40474.37,ZIG,Factory consumables,INV-0053,Operations,Mobile Money
+T00033,2023-08-31,ZimBuild Materials,EMP007,38934.34,ZIG,Raw materials purchase,INV-0171,Maintenance,Cash
+T00034,2023-04-21,Harare Steel Supplies,EMP008,17337.87,ZIG,Factory consumables,INV-0236,Operations,Cheque
+T00035,2023-08-17,African Procurement Co,EMP007,1260.17,USD,Spare parts,INV-0036,Operations,Cheque
+T00036,2024-07-03,Harare Steel Supplies,EMP002,15035.51,ZIG,Cleaning materials,INV-0298,Operations,EFT
+T00037,2023-11-18,Shell Vendor B,EMP002,19750.45,ZIG,Stationery,INV-0098,Operations,EFT
+T00038,2024-07-05,Chitungwiza Parts,EMP004,8750.0,USD,Spare parts,INV-0042,Operations,Cheque
+T00039,2023-11-04,Gweru Components,EMP007,22919.09,USD,Spare parts,INV-0152,Finance,Cash
+T00040,2024-11-24,ZimBuild Materials,EMP010,33716.43,USD,Packaging materials,INV-0208,Procurement,Cheque
+T00041,2024-08-16,Chitungwiza Parts,EMP008,27378.44,USD,Safety equipment,INV-0110,Maintenance,Cash
+T00042,2024-11-10,Chitungwiza Parts,EMP002,28555.75,USD,Factory consumables,INV-0116,Finance,Cash
+T00043,2024-05-01,Shell Vendor B,EMP001,407000.0,USD,Off the books adjustment,INV-FRAUD-0042,Maintenance,Mobile Money
+T00044,2023-01-06,Bulawayo Metals Ltd,EMP007,40191.16,ZIG,Factory consumables,INV-0266,Maintenance,EFT
+T00045,2023-05-05,Shell Vendor A,EMP009,20649.49,ZIG,Workshop tools,INV-0163,Maintenance,Mobile Money
+T00046,2023-06-12,Shell Vendor A,EMP008,33515.76,ZIG,Cleaning materials,INV-0142,Maintenance,Cash
+T00047,2023-10-20,Chitungwiza Parts,EMP006,10705.31,USD,Workshop tools,INV-0071,Finance,Cash
+T00048,2023-08-08,H@rare Steel Supplies,EMP006,3077.45,USD,Workshop tools,INV-0213,Procurement,Cash
+T00049,2024-08-21,Harare Steel Supplies,EMP010,42583.58,USD,Stationery,INV-0004,Operations,Cheque
+T00050,2024-03-05,Kwekwe Foundry,EMP009,24312.28,ZIG,Packaging materials,INV-0250,Finance,Cheque
+T00051,2023-12-11,Chitungwiza Parts,EMP007,8750.0,USD,Office supplies,INV-0042,Procurement,Mobile Money
+T00052,2023-03-27,ZimBuild Materials,EMP008,28995.18,USD,Office supplies,INV-0134,Maintenance,Cheque
+T00053,2024-01-24,H@rare Steel Supplies,EMP005,12665.9,USD,Equipment maintenance,INV-0010,Procurement,Cheque
+T00054,2024-10-29,Harare Steel Supplies,EMP004,2003.56,USD,Factory consumables,INV-0079,Finance,Cash
+T00055,2023-08-12,Msasa Trading,EMP006,21033.52,ZIG,Office supplies,INV-0059,Finance,Cheque
+T00056,2023-11-16,Chitungwiza Parts,EMP007,8750.0,ZIG,Stationery,INV-0042,Finance,EFT
+T00057,2024-12-01,Bulawayo Metals Ltd,EMP010,27098.44,USD,Raw materials purchase,INV-0273,Maintenance,Cheque
+T00058,2023-01-13,Shell Vendor B,EMP002,863112.97,USD,Sole source no tender required,INV-FRAUD-0057,Finance,Mobile Money
+T00059,2024-10-28,Shell Vendor B,EMP008,12299.69,USD,Safety equipment,INV-0138,Operations,Cash
+T00060,2024-04-06,Shell Vendor A,EMP010,11125.08,USD,Packaging materials,INV-0173,Procurement,Mobile Money
+T00061,2023-08-06,Msasa Trading,EMP006,16096.16,ZIG,Cleaning materials,INV-0142,Procurement,Cash
+T00062,2024-05-15,African Procurement Co,EMP008,25071.89,USD,Safety equipment,INV-0009,Procurement,Cheque
+T00063,2023-11-10,Chitungwiza Parts,EMP008,29945.41,ZIG,Workshop tools,INV-0177,Maintenance,Cheque
+T00064,2023-11-10,Bulawayo Metals Ltd,EMP004,11462.88,USD,Spare parts,INV-0275,Finance,Cash
+T00065,2024-08-26,Shell Vendor B,EMP010,43951.99,USD,Cleaning materials,INV-0100,Operations,Cash
+T00066,2024-06-30,Harare Steel Supplies,EMP001,5870.92,USD,Workshop tools,INV-0065,Maintenance,EFT
+T00067,2024-04-25,Chitungwiza Parts,EMP003,21646.4,USD,Raw materials purchase,INV-0245,Procurement,EFT
+T00068,2024-10-06,ZimBuild Materials,EMP003,30953.01,USD,Packaging materials,INV-0044,Finance,EFT
+T00069,2024-09-02,African Procurement Co,EMP009,35625.19,USD,Stationery,INV-0227,Operations,Mobile Money
+T00070,2024-09-16,Bulawayo Metals Ltd,EMP004,43212.87,USD,Factory consumables,INV-0042,Finance,Cash
+T00071,2023-01-03,Kwekwe Foundry,EMP010,18501.59,USD,Safety equipment,INV-0017,Finance,Cheque
+T00072,2024-04-09,African Procurement Co,EMP005,3388.85,ZIG,Packaging materials,INV-0218,Procurement,Cash
+T00073,2023-05-26,ZimBuild Materials,EMP005,3399.16,ZIG,Packaging materials,INV-0148,Maintenance,EFT
+T00074,2024-02-17,Shell Vendor B,EMP009,42431.9,USD,Safety equipment,INV-0042,Procurement,Mobile Money
+T00075,2023-01-27,Gweru Components,EMP010,4291.44,USD,Packaging materials,INV-0138,Procurement,Cash
+T00076,2023-10-12,Mutare Fabricators,EMP007,8330.71,USD,Safety equipment,INV-0241,Operations,Mobile Money
+T00077,2023-06-14,Kwekwe Foundry,EMP008,14975.2,USD,Cleaning materials,INV-0282,Procurement,Mobile Money
+T00078,2023-04-29,H@rare Steel Supplies,EMP009,43664.28,ZIG,Raw materials purchase,INV-0237,Maintenance,EFT
+T00079,2024-05-25,Harare Steel Supplies,EMP004,28218.31,ZIG,Cleaning materials,INV-0068,Operations,Mobile Money
+T00080,2023-01-30,Mutare Fabricators,EMP004,43796.98,USD,Office supplies,INV-0283,Procurement,Mobile Money
+T00081,2023-04-27,Bulawayo Metals Ltd,EMP003,20872.87,USD,Safety equipment,INV-0261,Operations,Mobile Money
+T00082,2023-09-07,ZimBuild Materials,EMP007,20664.03,ZIG,Factory consumables,INV-0261,Finance,EFT
+T00083,2024-02-29,Shell Vendor B,EMP005,15426.41,USD,Raw materials purchase,INV-0153,Maintenance,Cash
+T00084,2023-12-07,Shell Vendor B,EMP007,24925.9,USD,Safety equipment,INV-0097,Finance,Mobile Money
+T00085,2023-02-14,Shell Vendor A,EMP007,14454.3,ZIG,Stationery,INV-0254,Procurement,Cash
+T00086,2023-04-13,Shell Vendor A,EMP002,39363.73,USD,Workshop tools,INV-0008,Finance,Mobile Money
+T00087,2023-03-18,Msasa Trading,EMP006,21233.18,USD,Packaging materials,INV-0042,Operations,Mobile Money
+T00088,2024-05-14,Harare Steel Supplies,EMP010,39282.76,ZIG,Equipment maintenance,INV-0148,Finance,EFT
+T00089,2024-10-10,Bulawayo Metals Ltd,EMP008,31734.31,USD,Office supplies,INV-0015,Procurement,Cheque
+T00090,2024-01-19,African Procurement Co,EMP009,19494.77,ZIG,Stationery,INV-0093,Finance,Cash
+T00091,2024-09-26,Shell Vendor A,EMP002,711651.78,USD,Advance payment cash only,INV-FRAUD-0090,Maintenance,Cheque
+T00092,2024-04-21,Gweru Components,EMP009,40574.18,USD,Office supplies,INV-0227,Operations,Cheque
+T00093,2023-09-14,Msasa Trading,EMP004,20666.24,USD,Stationery,INV-0055,Finance,Mobile Money
+T00094,2023-10-30,Gweru Components,EMP007,1182.89,USD,Cleaning materials,INV-0290,Procurement,Mobile Money
+T00095,2023-08-24,Chitungwiza Parts,EMP004,27396.51,ZIG,Factory consumables,INV-0129,Finance,EFT
+T00096,2023-11-13,Harare Steel Supplies,EMP010,35529.75,ZIG,Spare parts,INV-0047,Operations,Cheque
+T00097,2023-05-16,Chitungwiza Parts,EMP009,35435.77,USD,Workshop tools,INV-0085,Operations,Mobile Money
+T00098,2023-12-13,Shell Vendor A,EMP002,36229.62,ZIG,Office supplies,INV-0204,Operations,EFT
+T00099,2024-07-03,African Procurement Co,EMP006,5500.0,ZIG,Cleaning materials,INV-0087,Operations,EFT
+T00100,2024-09-26,Shell Vendor B,EMP006,39813.72,ZIG,Packaging materials,INV-0033,Maintenance,Cheque
+T00101,2023-02-16,Msasa Trading,EMP008,42592.52,USD,Equipment maintenance,INV-0121,Finance,Mobile Money
+T00102,2024-07-07,Kwekwe Foundry,EMP003,18976.88,USD,Stationery,INV-0251,Maintenance,Cheque
+T00103,2024-03-30,Shell Vendor A,EMP002,194000.0,USD,No receipt provided emergency,INV-FRAUD-0102,Procurement,Mobile Money
+T00104,2024-04-10,African Procurement Co,EMP010,4306.97,USD,Raw materials purchase,INV-0171,Finance,Cash
+T00105,2024-07-21,African Procurement Co,EMP004,9480.65,ZIG,Spare parts,INV-0002,Operations,Cash
+T00106,2023-06-28,Harare Steel Supplies,EMP003,5124.7,USD,Raw materials purchase,INV-0122,Operations,EFT
+T00107,2024-03-07,Kwekwe Foundry,EMP002,23768.63,USD,Safety equipment,INV-0186,Procurement,Mobile Money
+T00108,2023-02-14,Gweru Components,EMP009,32780.49,USD,Cleaning materials,INV-0016,Procurement,Mobile Money
+T00109,2023-04-21,Shell Vendor A,EMP002,22164.04,USD,Equipment maintenance,INV-0076,Procurement,Cash
+T00110,2024-07-15,H@rare Steel Supplies,EMP010,32104.45,USD,Workshop tools,INV-0233,Maintenance,EFT
+T00111,2024-11-01,Shell Vendor B,EMP004,29361.07,USD,Stationery,INV-0117,Maintenance,Cheque
+T00112,2023-04-08,Chitungwiza Parts,EMP005,14202.17,ZIG,Spare parts,INV-0243,Procurement,EFT
+T00113,2023-04-09,Chitungwiza Parts,EMP003,33557.59,USD,Workshop tools,INV-0288,Operations,EFT
+T00114,2024-03-09,Kwekwe Foundry,EMP001,39090.53,ZIG,Cleaning materials,INV-0160,Operations,EFT
+T00115,2024-11-03,Bulawayo Metals Ltd,EMP006,21802.08,USD,Workshop tools,INV-0059,Operations,Cash
+T00116,2024-09-28,Gweru Components,EMP009,27688.08,ZIG,Raw materials purchase,INV-0137,Procurement,Cash
+T00117,2023-12-14,ZimBuild Materials,EMP003,15925.85,USD,Packaging materials,INV-0036,Finance,EFT
+T00118,2024-01-21,Chitungwiza Parts,EMP003,19008.5,USD,Spare parts,INV-0167,Procurement,EFT
+T00119,2023-02-20,Msasa Trading,EMP008,30393.8,USD,Stationery,INV-0227,Maintenance,Cheque
+T00120,2023-12-20,Msasa Trading,EMP010,19460.13,ZIG,Safety equipment,INV-0158,Procurement,Cash
+T00121,2023-01-08,African Procurement Co,EMP003,9358.16,USD,Cleaning materials,INV-0168,Procurement,EFT
+T00122,2023-05-13,Kwekwe Foundry,EMP004,17233.29,ZIG,Workshop tools,INV-0182,Procurement,Mobile Money
+T00123,2023-01-20,Bulawayo Metals Ltd,EMP006,20796.99,USD,Packaging materials,INV-0294,Maintenance,Mobile Money
+T00124,2023-11-29,Mutare Fabricators,EMP008,7899.92,USD,Spare parts,INV-0224,Procurement,Cash
+T00125,2023-03-22,Msasa Trading,EMP006,17930.35,USD,Factory consumables,INV-0087,Procurement,EFT
+T00126,2023-12-24,Gweru Components,EMP003,15929.27,USD,Factory consumables,INV-0075,Operations,Cash
+T00127,2024-11-02,Gweru Components,EMP008,3575.83,ZIG,Safety equipment,INV-0297,Maintenance,Cheque
+T00128,2023-06-04,Shell Vendor A,EMP008,19901.37,USD,Cleaning materials,INV-0029,Operations,EFT
+T00129,2023-02-28,Msasa Trading,EMP002,16719.44,ZIG,Equipment maintenance,INV-0260,Maintenance,Mobile Money
+T00130,2023-02-12,Mutare Fabricators,EMP004,20348.07,ZIG,Spare parts,INV-0244,Finance,EFT
+T00131,2023-12-18,Bulawayo Metals Ltd,EMP009,44210.87,USD,Office supplies,INV-0127,Maintenance,Mobile Money
+T00132,2024-01-08,Msasa Trading,EMP007,16903.77,USD,Stationery,INV-0027,Operations,EFT
+T00133,2024-01-31,Kwekwe Foundry,EMP010,12929.78,USD,Office supplies,INV-0042,Finance,Cheque
+T00134,2024-11-09,Mutare Fabricators,EMP002,17759.72,ZIG,Cleaning materials,INV-0193,Operations,Cash
+T00135,2024-06-23,Gweru Components,EMP007,4386.69,USD,Workshop tools,INV-0010,Operations,Cheque
+T00136,2024-05-12,ZimBuild Materials,EMP003,8801.83,USD,Equipment maintenance,INV-0052,Procurement,Cheque
+T00137,2024-09-03,ZimBuild Materials,EMP003,17077.05,ZIG,Packaging materials,INV-0225,Procurement,Mobile Money
+T00138,2024-03-30,Kwekwe Foundry,EMP008,27554.67,ZIG,Factory consumables,INV-0123,Operations,Mobile Money
+T00139,2024-11-25,Shell Vendor A,EMP008,42631.43,USD,Cleaning materials,INV-0258,Maintenance,Cash
+T00140,2023-05-22,Harare Steel Supplies,EMP008,39310.49,ZIG,Spare parts,INV-0053,Procurement,Cheque
+T00141,2024-04-05,ZimBuild Materials,EMP007,40757.72,ZIG,Equipment maintenance,INV-0231,Operations,EFT
+T00142,2024-01-18,Bulawayo Metals Ltd,EMP006,10762.86,USD,Factory consumables,INV-0164,Procurement,Cheque
+T00143,2023-10-21,Shell Vendor A,EMP003,41299.35,USD,Safety equipment,INV-0003,Procurement,EFT
+T00144,2024-07-15,Mutare Fabricators,EMP009,42322.12,USD,Stationery,INV-0148,Finance,Cheque
+T00145,2024-10-16,Shell Vendor A,EMP002,35766.68,USD,Equipment maintenance,INV-0275,Procurement,Cash
+T00146,2023-01-02,African Procurement Co,EMP010,27743.47,ZIG,Stationery,INV-0044,Operations,EFT
+T00147,2024-06-03,H@rare Steel Supplies,EMP008,25026.01,USD,Raw materials purchase,INV-0192,Operations,EFT
+T00148,2023-09-04,Gweru Components,EMP002,33035.76,USD,Packaging materials,INV-0069,Procurement,Cheque
+T00149,2023-06-29,Gweru Components,EMP008,37401.19,ZIG,Safety equipment,INV-0070,Procurement,Mobile Money
+T00150,2023-07-24,H@rare Steel Supplies,EMP002,226000.0,USD,Sole source no tender required,INV-FRAUD-0149,Operations,EFT
+T00151,2024-01-01,Harare Steel Supplies,EMP006,38823.81,USD,Cleaning materials,INV-0189,Maintenance,Mobile Money
+T00152,2024-01-31,ZimBuild Materials,EMP008,15388.84,USD,Safety equipment,INV-0266,Operations,EFT
+T00153,2024-09-08,ZimBuild Materials,EMP009,44780.4,USD,Cleaning materials,INV-0053,Procurement,Cheque
+T00154,2024-09-09,ZimBuild Materials,EMP008,32351.3,USD,Spare parts,INV-0022,Operations,Mobile Money
+T00155,2023-02-28,Gweru Components,EMP007,3561.84,ZIG,Spare parts,INV-0082,Procurement,Cash
+T00156,2024-03-24,Bulawayo Metals Ltd,EMP004,1758.99,USD,Spare parts,INV-0197,Procurement,Cash
+T00157,2024-01-16,Bulawayo Metals Ltd,EMP010,20088.48,ZIG,Office supplies,INV-0188,Maintenance,Cheque
+T00158,2023-04-27,ZimBuild Materials,EMP008,1360.92,USD,Workshop tools,INV-0288,Procurement,Cheque
+T00159,2023-08-08,Msasa Trading,EMP008,44837.16,USD,Factory consumables,INV-0070,Procurement,Mobile Money
+T00160,2023-03-31,Chitungwiza Parts,EMP006,36510.99,ZIG,Equipment maintenance,INV-0278,Operations,Cheque
+T00161,2024-10-15,Chitungwiza Parts,EMP009,7999.28,USD,Factory consumables,INV-0103,Finance,Cash
+T00162,2024-07-21,ZimBuild Materials,EMP008,8750.0,ZIG,Workshop tools,INV-0123,Procurement,EFT
+T00163,2024-05-05,H@rare Steel Supplies,EMP010,23751.17,ZIG,Equipment maintenance,INV-0163,Procurement,Mobile Money
+T00164,2023-05-12,Shell Vendor B,EMP010,39532.61,ZIG,Office supplies,INV-0222,Procurement,EFT
+T00165,2023-06-15,Kwekwe Foundry,EMP004,14655.2,ZIG,Spare parts,INV-0146,Procurement,Cheque
+T00166,2023-10-09,Msasa Trading,EMP010,5807.63,USD,Workshop tools,INV-0258,Finance,Cash
+T00167,2024-09-11,Mutare Fabricators,EMP001,15325.36,USD,Raw materials purchase,INV-0024,Operations,Cash
+T00168,2024-10-16,Gweru Components,EMP009,1556.81,USD,Cleaning materials,INV-0248,Finance,Mobile Money
+T00169,2023-03-03,H@rare Steel Supplies,EMP008,7282.0,ZIG,Safety equipment,INV-0175,Finance,Cheque
+T00170,2023-12-20,ZimBuild Materials,EMP006,43896.76,ZIG,Workshop tools,INV-0055,Operations,Cash
+T00171,2023-09-11,Harare Steel Supplies,EMP005,6511.32,ZIG,Stationery,INV-0215,Finance,Cash
+T00172,2023-11-17,ZimBuild Materials,EMP008,8704.57,USD,Workshop tools,INV-0256,Operations,Mobile Money
+T00173,2024-06-01,Shell Vendor A,EMP001,196000.0,USD,Advance payment cash only,INV-FRAUD-0172,Maintenance,Mobile Money
+T00174,2023-04-21,Bulawayo Metals Ltd,EMP005,12000.0,USD,Spare parts,INV-0087,Procurement,Mobile Money
+T00175,2024-01-07,H@rare Steel Supplies,EMP002,129000.0,USD,Emergency procurement no tender,INV-FRAUD-0174,Finance,EFT
+T00176,2023-12-14,Chitungwiza Parts,EMP003,25190.87,ZIG,Factory consumables,INV-0261,Maintenance,EFT
+T00177,2023-12-08,H@rare Steel Supplies,EMP001,821608.12,USD,No receipt provided emergency,INV-FRAUD-0176,Operations,Cash
+T00178,2023-11-03,Shell Vendor B,EMP009,26798.86,USD,Workshop tools,INV-0289,Operations,Mobile Money
+T00179,2024-11-20,H@rare Steel Supplies,EMP010,5110.29,USD,Cleaning materials,INV-0243,Operations,Cash
+T00180,2023-06-24,Kwekwe Foundry,EMP010,23685.61,ZIG,Stationery,INV-0125,Procurement,EFT
+T00181,2024-03-04,Kwekwe Foundry,EMP004,6984.12,ZIG,Stationery,INV-0242,Procurement,Cash
+T00182,2024-11-09,H@rare Steel Supplies,EMP006,21631.02,USD,Office supplies,INV-0273,Operations,Cheque
+T00183,2024-11-28,Kwekwe Foundry,EMP005,29020.25,USD,Packaging materials,INV-0099,Finance,Cheque
+T00184,2023-11-01,Kwekwe Foundry,EMP004,34748.61,USD,Safety equipment,INV-0246,Operations,Cheque
+T00185,2024-07-10,H@rare Steel Supplies,EMP006,17210.3,USD,Office supplies,INV-0022,Operations,EFT
+T00186,2023-09-20,African Procurement Co,EMP004,33680.76,USD,Workshop tools,INV-0288,Operations,Cash
+T00187,2023-09-03,Gweru Components,EMP009,11062.12,ZIG,Factory consumables,INV-0027,Procurement,Mobile Money
+T00188,2024-11-28,Harare Steel Supplies,EMP009,34730.32,USD,Office supplies,INV-0244,Maintenance,Cash
+T00189,2023-10-20,Bulawayo Metals Ltd,EMP010,29136.23,ZIG,Factory consumables,INV-0020,Finance,Mobile Money
+T00190,2023-02-07,H@rare Steel Supplies,EMP008,44873.3,USD,Office supplies,INV-0020,Procurement,Cheque
+T00191,2023-12-10,Gweru Components,EMP009,12948.36,USD,Workshop tools,INV-0069,Maintenance,Cheque
+T00192,2023-06-16,Gweru Components,EMP005,32954.14,USD,Office supplies,INV-0173,Operations,Cash
+T00193,2024-02-20,Shell Vendor B,EMP006,37249.14,USD,Equipment maintenance,INV-0049,Finance,Cash
+T00194,2023-01-07,African Procurement Co,EMP008,11883.18,USD,Cleaning materials,INV-0155,Procurement,Cheque
+T00195,2023-03-05,Shell Vendor A,EMP005,30116.82,USD,Office supplies,INV-0258,Operations,EFT
+T00196,2024-01-12,African Procurement Co,EMP003,27735.22,ZIG,Safety equipment,INV-0233,Operations,Mobile Money
+T00197,2024-07-04,African Procurement Co,EMP004,36129.38,USD,Packaging materials,INV-0270,Maintenance,Cheque
+T00198,2023-03-05,H@rare Steel Supplies,EMP001,844183.56,USD,Confidential direct award,INV-FRAUD-0197,Operations,Mobile Money
+T00199,2024-08-20,Shell Vendor B,EMP008,22099.49,USD,Raw materials purchase,INV-0068,Maintenance,Mobile Money
+T00200,2024-11-19,Kwekwe Foundry,EMP001,36349.81,USD,Stationery,INV-0002,Finance,EFT
+T00201,2023-03-07,Shell Vendor B,EMP001,582458.25,USD,Advance payment cash only,INV-FRAUD-0200,Maintenance,Cash
+T00202,2024-10-23,Chitungwiza Parts,EMP007,43377.46,USD,Safety equipment,INV-0193,Procurement,Cash
+T00203,2023-07-02,H@rare Steel Supplies,EMP009,44679.54,ZIG,Office supplies,INV-0002,Procurement,Cheque
+T00204,2024-03-10,African Procurement Co,EMP004,24030.63,USD,Safety equipment,INV-0080,Operations,Cash
+T00205,2023-04-26,Gweru Components,EMP007,1643.34,USD,Packaging materials,INV-0124,Finance,EFT
+T00206,2024-09-04,Chitungwiza Parts,EMP001,8750.0,USD,Factory consumables,INV-0087,Maintenance,Cash
+T00207,2023-02-27,Msasa Trading,EMP004,6478.07,USD,Packaging materials,INV-0296,Operations,Cash
+T00208,2024-11-07,H@rare Steel Supplies,EMP005,23552.05,USD,Cleaning materials,INV-0286,Finance,Mobile Money
+T00209,2023-12-19,Gweru Components,EMP007,42383.07,USD,Workshop tools,INV-0214,Maintenance,Cash
+T00210,2024-07-04,African Procurement Co,EMP005,21413.64,USD,Office supplies,INV-0030,Maintenance,Mobile Money
+T00211,2023-09-06,Chitungwiza Parts,EMP002,11623.8,USD,Safety equipment,INV-0048,Finance,EFT
+T00212,2024-09-09,Bulawayo Metals Ltd,EMP004,1971.73,ZIG,Packaging materials,INV-0112,Maintenance,Cash
+T00213,2023-01-16,African Procurement Co,EMP002,9688.99,ZIG,Safety equipment,INV-0105,Maintenance,Cash
+T00214,2024-01-25,Gweru Components,EMP006,21088.02,USD,Cleaning materials,INV-0185,Maintenance,Mobile Money
+T00215,2024-04-25,Chitungwiza Parts,EMP004,34320.98,USD,Spare parts,INV-0212,Procurement,Cash
+T00216,2024-07-20,Msasa Trading,EMP007,8750.0,ZIG,Cleaning materials,INV-0042,Operations,Cash
+T00217,2024-05-26,Gweru Components,EMP006,24868.79,USD,Cleaning materials,INV-0252,Maintenance,Cash
+T00218,2023-05-24,Shell Vendor A,EMP003,32470.05,USD,Workshop tools,INV-0269,Procurement,EFT
+T00219,2023-01-07,Gweru Components,EMP004,18675.17,ZIG,Equipment maintenance,INV-0005,Finance,Mobile Money
+T00220,2024-11-13,Shell Vendor A,EMP008,42038.89,USD,Raw materials purchase,INV-0273,Maintenance,EFT
+T00221,2024-07-02,Shell Vendor A,EMP001,107000.0,USD,Emergency procurement no tender,INV-FRAUD-0220,Finance,Cash
+T00222,2023-12-29,H@rare Steel Supplies,EMP002,12176.15,USD,Spare parts,INV-0236,Finance,Cash
+T00223,2023-03-24,Gweru Components,EMP001,29487.36,USD,Equipment maintenance,INV-0195,Maintenance,Mobile Money
+T00224,2023-06-25,H@rare Steel Supplies,EMP001,438000.0,USD,Urgent sole supplier payment,INV-FRAUD-0223,Finance,Cash
+T00225,2024-08-03,Harare Steel Supplies,EMP002,21502.41,ZIG,Cleaning materials,INV-0289,Procurement,Cash
+T00226,2023-08-01,Kwekwe Foundry,EMP007,26499.22,USD,Equipment maintenance,INV-0084,Finance,Mobile Money
+T00227,2024-01-29,ZimBuild Materials,EMP002,34051.3,USD,Workshop tools,INV-0028,Procurement,Mobile Money
+T00228,2024-09-11,Mutare Fabricators,EMP007,34651.45,USD,Spare parts,INV-0140,Maintenance,Mobile Money
+T00229,2024-01-20,Gweru Components,EMP010,19546.79,USD,Stationery,INV-0152,Finance,EFT
+T00230,2024-10-11,H@rare Steel Supplies,EMP006,7111.6,USD,Spare parts,INV-0047,Procurement,Cheque
+T00231,2023-04-15,ZimBuild Materials,EMP007,6136.31,ZIG,Safety equipment,INV-0285,Maintenance,EFT
+T00232,2023-04-06,Shell Vendor A,EMP002,414000.0,USD,Off the books adjustment,INV-FRAUD-0231,Maintenance,EFT
+T00233,2023-09-06,ZimBuild Materials,EMP007,25823.83,ZIG,Office supplies,INV-0138,Operations,Cheque
+T00234,2024-03-21,Msasa Trading,EMP008,12563.09,USD,Equipment maintenance,INV-0129,Finance,Mobile Money
+T00235,2023-04-20,Harare Steel Supplies,EMP007,6269.93,ZIG,Spare parts,INV-0195,Operations,Mobile Money
+T00236,2024-10-28,ZimBuild Materials,EMP005,43845.3,ZIG,Spare parts,INV-0103,Maintenance,Cheque
+T00237,2023-11-23,Kwekwe Foundry,EMP008,13256.88,ZIG,Packaging materials,INV-0167,Maintenance,Cheque
+T00238,2023-04-27,African Procurement Co,EMP010,41956.61,ZIG,Workshop tools,INV-0282,Procurement,Mobile Money
+T00239,2023-10-26,Bulawayo Metals Ltd,EMP007,37441.43,ZIG,Safety equipment,INV-0156,Finance,Cheque
+T00240,2024-01-22,Mutare Fabricators,EMP008,3513.64,USD,Packaging materials,INV-0274,Maintenance,EFT
+T00241,2024-07-03,Bulawayo Metals Ltd,EMP002,26803.13,USD,Factory consumables,INV-0086,Procurement,Mobile Money
+T00242,2024-03-16,Bulawayo Metals Ltd,EMP005,4946.32,ZIG,Factory consumables,INV-0266,Finance,Mobile Money
+T00243,2024-11-26,Shell Vendor B,EMP003,26568.83,USD,Spare parts,INV-0248,Procurement,Cheque
+T00244,2023-04-29,Kwekwe Foundry,EMP003,37443.03,USD,Spare parts,INV-0176,Maintenance,Cash
+T00245,2023-04-10,Kwekwe Foundry,EMP008,19829.83,USD,Spare parts,INV-0154,Procurement,EFT
+T00246,2023-04-22,H@rare Steel Supplies,EMP001,706196.12,USD,Confidential direct award,INV-FRAUD-0245,Operations,Mobile Money
+T00247,2024-02-19,ZimBuild Materials,EMP007,28413.26,USD,Stationery,INV-0102,Maintenance,Mobile Money
+T00248,2023-07-30,Kwekwe Foundry,EMP002,12669.85,USD,Packaging materials,INV-0275,Finance,Cheque
+T00249,2023-09-26,Shell Vendor A,EMP009,30247.42,ZIG,Spare parts,INV-0199,Maintenance,EFT
+T00250,2024-09-24,Gweru Components,EMP005,7929.23,ZIG,Packaging materials,INV-0044,Finance,Cheque
+T00251,2023-07-07,ZimBuild Materials,EMP009,16924.11,USD,Stationery,INV-0071,Maintenance,Mobile Money
+T00252,2024-10-22,ZimBuild Materials,EMP009,41895.13,USD,Office supplies,INV-0148,Finance,Cash
+T00253,2023-02-24,Harare Steel Supplies,EMP008,38975.4,ZIG,Office supplies,INV-0197,Maintenance,Mobile Money
+T00254,2024-03-30,Bulawayo Metals Ltd,EMP010,22093.74,ZIG,Raw materials purchase,INV-0150,Procurement,Cheque
+T00255,2024-04-13,Shell Vendor A,EMP009,25541.14,USD,Workshop tools,INV-0294,Procurement,Cheque
+T00256,2024-01-11,Harare Steel Supplies,EMP008,24483.54,ZIG,Workshop tools,INV-0218,Procurement,Cash
+T00257,2024-04-05,Bulawayo Metals Ltd,EMP008,11974.12,ZIG,Equipment maintenance,INV-0108,Operations,Mobile Money
+T00258,2023-07-31,Harare Steel Supplies,EMP010,36646.14,ZIG,Spare parts,INV-0144,Finance,Cheque
+T00259,2024-08-09,Shell Vendor B,EMP002,12176.97,USD,Office supplies,INV-0031,Operations,Cash
+T00260,2023-05-30,African Procurement Co,EMP007,32070.49,ZIG,Safety equipment,INV-0296,Operations,Mobile Money
+T00261,2023-04-06,Kwekwe Foundry,EMP005,18247.71,USD,Spare parts,INV-0250,Operations,EFT
+T00262,2023-04-06,Shell Vendor A,EMP006,32945.75,ZIG,Equipment maintenance,INV-0204,Finance,Mobile Money
+T00263,2023-11-27,Chitungwiza Parts,EMP009,37309.79,ZIG,Packaging materials,INV-0290,Maintenance,Cheque
+T00264,2023-02-17,Shell Vendor A,EMP001,4660.95,ZIG,Equipment maintenance,INV-0226,Maintenance,EFT
+T00265,2023-05-16,Msasa Trading,EMP003,39720.22,USD,Cleaning materials,INV-0185,Operations,EFT
+T00266,2023-06-19,Gweru Components,EMP005,2520.07,USD,Factory consumables,INV-0047,Procurement,EFT
+T00267,2024-08-30,Gweru Components,EMP008,10333.35,USD,Raw materials purchase,INV-0176,Procurement,Mobile Money
+T00268,2023-08-23,Kwekwe Foundry,EMP002,17361.53,USD,Equipment maintenance,INV-0189,Operations,Cash
+T00269,2023-05-17,Gweru Components,EMP003,28942.61,ZIG,Equipment maintenance,INV-0289,Procurement,Cash
+T00270,2024-10-05,H@rare Steel Supplies,EMP010,33722.44,ZIG,Safety equipment,INV-0045,Procurement,Cash
+T00271,2024-01-29,H@rare Steel Supplies,EMP006,15948.8,ZIG,Office supplies,INV-0142,Procurement,Cash
+T00272,2024-09-14,Kwekwe Foundry,EMP001,12964.45,ZIG,Cleaning materials,INV-0266,Finance,Mobile Money
+T00273,2023-09-03,Bulawayo Metals Ltd,EMP004,22370.97,ZIG,Safety equipment,INV-0037,Procurement,Cheque
+T00274,2024-08-05,Shell Vendor B,EMP003,19054.69,USD,Safety equipment,INV-0009,Procurement,EFT
+T00275,2023-03-03,Msasa Trading,EMP005,12000.0,USD,Workshop tools,INV-0087,Maintenance,EFT
+T00276,2023-06-06,Msasa Trading,EMP002,12630.55,ZIG,Workshop tools,INV-0080,Operations,Mobile Money
+T00277,2024-10-27,Bulawayo Metals Ltd,EMP005,30711.29,ZIG,Stationery,INV-0030,Finance,EFT
+T00278,2024-09-18,Msasa Trading,EMP003,27475.69,USD,Equipment maintenance,INV-0071,Procurement,Cash
+T00279,2024-06-13,Kwekwe Foundry,EMP005,35277.82,USD,Office supplies,INV-0065,Operations,EFT
+T00280,2024-03-15,Msasa Trading,EMP002,12000.0,ZIG,Cleaning materials,INV-0123,Procurement,Mobile Money
+T00281,2024-05-26,ZimBuild Materials,EMP006,38699.32,USD,Office supplies,INV-0053,Procurement,Cash
+T00282,2023-01-13,Harare Steel Supplies,EMP008,5500.0,USD,Spare parts,INV-0042,Finance,EFT
+T00283,2024-11-02,Chitungwiza Parts,EMP004,18987.74,USD,Stationery,INV-0139,Procurement,Cheque
+T00284,2023-02-23,Shell Vendor B,EMP001,8234.63,USD,Stationery,INV-0239,Operations,Cheque
+T00285,2023-01-09,Msasa Trading,EMP010,16727.59,ZIG,Cleaning materials,INV-0125,Maintenance,Cheque
+T00286,2023-07-20,Shell Vendor B,EMP004,33014.36,USD,Office supplies,INV-0210,Procurement,Cash
+T00287,2023-01-10,Harare Steel Supplies,EMP007,42804.36,USD,Cleaning materials,INV-0106,Finance,Mobile Money
+T00288,2023-05-26,Bulawayo Metals Ltd,EMP001,32082.03,ZIG,Factory consumables,INV-0212,Operations,Mobile Money
+T00289,2023-04-08,Gweru Components,EMP007,22843.16,ZIG,Equipment maintenance,INV-0291,Procurement,Mobile Money
+T00290,2023-10-26,Chitungwiza Parts,EMP007,11892.39,USD,Spare parts,INV-0232,Operations,Cash
+T00291,2024-08-21,Shell Vendor B,EMP002,142000.0,USD,Off the books adjustment,INV-FRAUD-0290,Procurement,Cheque
+T00292,2023-11-12,Bulawayo Metals Ltd,EMP002,20957.93,USD,Office supplies,INV-0021,Finance,Cheque
+T00293,2023-12-31,Harare Steel Supplies,EMP005,17951.75,ZIG,Cleaning materials,INV-0016,Maintenance,Mobile Money
+T00294,2023-04-07,ZimBuild Materials,EMP002,20899.54,USD,Raw materials purchase,INV-0114,Finance,Cash
+T00295,2024-10-07,Bulawayo Metals Ltd,EMP010,42203.36,USD,Packaging materials,INV-0039,Procurement,EFT
+T00296,2023-05-12,Chitungwiza Parts,EMP002,4320.64,USD,Raw materials purchase,INV-0026,Finance,Mobile Money
+T00297,2023-01-31,H@rare Steel Supplies,EMP003,17346.28,ZIG,Spare parts,INV-0096,Operations,Cheque
+T00298,2024-09-20,African Procurement Co,EMP005,27939.11,USD,Safety equipment,INV-0282,Maintenance,EFT
+T00299,2024-03-05,Shell Vendor B,EMP004,9135.71,USD,Workshop tools,INV-0196,Operations,Mobile Money
+T00300,2024-08-02,H@rare Steel Supplies,EMP005,22707.22,USD,Office supplies,INV-0164,Finance,EFT
+T00301,2023-03-01,Shell Vendor A,EMP009,36427.69,ZIG,Spare parts,INV-0120,Finance,EFT
+T00302,2024-06-30,Kwekwe Foundry,EMP001,36769.58,ZIG,Factory consumables,INV-0199,Operations,Cash
+T00303,2024-01-03,Harare Steel Supplies,EMP006,41146.3,ZIG,Packaging materials,INV-0073,Finance,Mobile Money
+T00304,2023-02-08,African Procurement Co,EMP010,4243.53,USD,Factory consumables,INV-0270,Maintenance,EFT
+T00305,2023-05-14,ZimBuild Materials,EMP006,15466.01,USD,Raw materials purchase,INV-0076,Finance,EFT
+T00306,2023-03-16,Gweru Components,EMP007,16936.87,USD,Packaging materials,INV-0173,Operations,Cheque
+T00307,2024-03-23,Shell Vendor A,EMP006,35674.55,ZIG,Office supplies,INV-0183,Finance,Cash
+T00308,2023-10-29,Kwekwe Foundry,EMP001,5905.21,USD,Packaging materials,INV-0291,Procurement,Cash
+T00309,2024-09-18,Mutare Fabricators,EMP002,10096.11,ZIG,Safety equipment,INV-0170,Procurement,Cash
+T00310,2024-10-13,Bulawayo Metals Ltd,EMP006,39862.35,USD,Safety equipment,INV-0136,Finance,Cash
+T00311,2023-04-21,Harare Steel Supplies,EMP007,32474.53,USD,Safety equipment,INV-0086,Maintenance,Mobile Money
+T00312,2024-01-20,Shell Vendor A,EMP010,4744.0,ZIG,Factory consumables,INV-0232,Procurement,EFT
+T00313,2023-04-18,ZimBuild Materials,EMP007,3524.18,USD,Office supplies,INV-0281,Procurement,Cheque
+T00314,2024-05-09,H@rare Steel Supplies,EMP003,31761.81,USD,Packaging materials,INV-0081,Procurement,EFT
+T00315,2024-02-24,Kwekwe Foundry,EMP009,31434.41,USD,Cleaning materials,INV-0153,Finance,EFT
+T00316,2024-05-17,Shell Vendor A,EMP002,244000.0,USD,Sole source no tender required,INV-FRAUD-0315,Finance,EFT
+T00317,2023-10-26,Shell Vendor B,EMP002,979121.53,USD,Sole source no tender required,INV-FRAUD-0316,Maintenance,Cheque
+T00318,2023-07-09,H@rare Steel Supplies,EMP006,16821.72,USD,Office supplies,INV-0023,Operations,Mobile Money
+T00319,2023-10-03,ZimBuild Materials,EMP002,25478.25,USD,Equipment maintenance,INV-0278,Maintenance,Cash
+T00320,2024-06-19,Shell Vendor B,EMP008,18954.72,ZIG,Packaging materials,INV-0244,Operations,EFT
+T00321,2023-02-05,Shell Vendor B,EMP010,22694.15,ZIG,Packaging materials,INV-0062,Maintenance,Cash
+T00322,2023-08-05,ZimBuild Materials,EMP001,36419.04,USD,Stationery,INV-0223,Finance,Cash
+T00323,2023-03-10,Shell Vendor B,EMP007,4098.83,USD,Workshop tools,INV-0142,Maintenance,EFT
+T00324,2024-06-19,Bulawayo Metals Ltd,EMP007,35219.52,ZIG,Office supplies,INV-0291,Procurement,EFT
+T00325,2023-10-20,Chitungwiza Parts,EMP007,39062.89,USD,Cleaning materials,INV-0249,Maintenance,EFT
+T00326,2024-09-25,Kwekwe Foundry,EMP007,27467.76,USD,Raw materials purchase,INV-0170,Finance,EFT
+T00327,2024-01-17,Msasa Trading,EMP005,1106.43,USD,Cleaning materials,INV-0051,Finance,Cash
+T00328,2023-11-25,H@rare Steel Supplies,EMP010,12270.02,ZIG,Equipment maintenance,INV-0227,Finance,Mobile Money
+T00329,2024-01-18,Shell Vendor B,EMP003,36981.58,USD,Equipment maintenance,INV-0260,Maintenance,Cash
+T00330,2024-08-05,African Procurement Co,EMP004,1496.88,ZIG,Raw materials purchase,INV-0017,Maintenance,EFT
+T00331,2023-10-08,Shell Vendor A,EMP009,16702.17,USD,Stationery,INV-0016,Finance,Cheque
+T00332,2024-04-30,Chitungwiza Parts,EMP006,26492.24,USD,Office supplies,INV-0047,Operations,EFT
+T00333,2024-08-08,African Procurement Co,EMP004,35136.39,ZIG,Factory consumables,INV-0138,Maintenance,EFT
+T00334,2024-11-29,ZimBuild Materials,EMP003,598.63,USD,Packaging materials,INV-0115,Operations,Cheque
+T00335,2023-10-09,H@rare Steel Supplies,EMP006,19186.54,USD,Safety equipment,INV-0112,Maintenance,Cheque
+T00336,2024-02-11,Harare Steel Supplies,EMP009,26385.02,ZIG,Spare parts,INV-0145,Operations,EFT
+T00337,2023-10-11,Msasa Trading,EMP005,28898.64,ZIG,Cleaning materials,INV-0077,Finance,EFT
+T00338,2024-09-06,Chitungwiza Parts,EMP003,18303.61,USD,Raw materials purchase,INV-0152,Operations,Mobile Money
+T00339,2024-08-20,Mutare Fabricators,EMP004,31921.49,ZIG,Spare parts,INV-0274,Maintenance,Cheque
+T00340,2024-11-04,ZimBuild Materials,EMP005,39466.97,USD,Equipment maintenance,INV-0066,Operations,Cash
+T00341,2024-11-01,Chitungwiza Parts,EMP004,4200.63,USD,Cleaning materials,INV-0170,Operations,Cheque
+T00342,2023-05-01,Gweru Components,EMP010,21280.04,ZIG,Packaging materials,INV-0037,Maintenance,Cash
+T00343,2024-01-26,H@rare Steel Supplies,EMP001,23936.77,ZIG,Office supplies,INV-0103,Operations,Mobile Money
+T00344,2024-04-13,Kwekwe Foundry,EMP003,6616.44,USD,Equipment maintenance,INV-0171,Finance,Cheque
+T00345,2023-10-08,Bulawayo Metals Ltd,EMP010,5500.0,USD,Office supplies,INV-0042,Finance,Mobile Money
+T00346,2024-05-03,Harare Steel Supplies,EMP009,17372.58,USD,Factory consumables,INV-0008,Operations,Cash
+T00347,2023-09-12,Shell Vendor A,EMP001,451000.0,USD,Off the books adjustment,INV-FRAUD-0346,Operations,Cash
+T00348,2023-10-25,Shell Vendor B,EMP001,308000.0,USD,No receipt provided emergency,INV-FRAUD-0347,Maintenance,Cheque
+T00349,2024-02-18,African Procurement Co,EMP003,1056.79,USD,Factory consumables,INV-0259,Finance,EFT
+T00350,2023-02-08,Gweru Components,EMP005,17008.62,ZIG,Workshop tools,INV-0025,Procurement,EFT
+T00351,2023-04-29,African Procurement Co,EMP007,12000.0,ZIG,Equipment maintenance,INV-0087,Maintenance,Cash
+T00352,2023-01-10,Gweru Components,EMP002,13690.02,USD,Workshop tools,INV-0071,Maintenance,EFT
+T00353,2023-10-17,Bulawayo Metals Ltd,EMP008,5307.76,ZIG,Factory consumables,INV-0103,Operations,Cash
+T00354,2023-06-14,Shell Vendor A,EMP004,1965.38,USD,Safety equipment,INV-0121,Procurement,EFT
+T00355,2024-08-10,ZimBuild Materials,EMP002,30172.18,USD,Workshop tools,INV-0052,Operations,Cash
+T00356,2023-09-28,Bulawayo Metals Ltd,EMP003,20999.63,USD,Raw materials purchase,INV-0185,Operations,Mobile Money
+T00357,2023-02-16,ZimBuild Materials,EMP003,633.32,USD,Spare parts,INV-0225,Operations,EFT
+T00358,2023-04-27,Shell Vendor A,EMP005,18154.83,USD,Stationery,INV-0216,Finance,EFT
+T00359,2023-06-13,Mutare Fabricators,EMP008,4846.35,USD,Packaging materials,INV-0093,Maintenance,Cheque
+T00360,2023-05-14,Shell Vendor A,EMP002,21841.97,USD,Stationery,INV-0024,Procurement,Cheque
+T00361,2024-11-25,Chitungwiza Parts,EMP010,8750.0,ZIG,Packaging materials,INV-0123,Operations,EFT
+T00362,2024-05-08,Gweru Components,EMP007,15689.58,ZIG,Office supplies,INV-0028,Procurement,Cash
+T00363,2024-05-22,Bulawayo Metals Ltd,EMP008,39149.82,ZIG,Spare parts,INV-0170,Operations,EFT
+T00364,2024-01-23,African Procurement Co,EMP002,18266.81,USD,Safety equipment,INV-0294,Maintenance,EFT
+T00365,2023-05-02,Kwekwe Foundry,EMP001,44134.05,USD,Equipment maintenance,INV-0212,Procurement,EFT
+T00366,2024-09-25,Shell Vendor B,EMP009,28761.71,USD,Factory consumables,INV-0175,Operations,EFT
+T00367,2023-12-06,Mutare Fabricators,EMP010,25294.76,USD,Safety equipment,INV-0232,Procurement,EFT
+T00368,2023-12-16,Gweru Components,EMP005,16110.23,ZIG,Workshop tools,INV-0192,Procurement,EFT
+T00369,2024-02-24,Mutare Fabricators,EMP004,4991.88,USD,Factory consumables,INV-0202,Finance,Mobile Money
+T00370,2023-12-13,H@rare Steel Supplies,EMP001,5027.91,USD,Packaging materials,INV-0231,Maintenance,Cash
+T00371,2023-02-19,African Procurement Co,EMP010,8750.0,ZIG,Safety equipment,INV-0042,Finance,Cash
+T00372,2024-09-12,Shell Vendor B,EMP007,39744.77,ZIG,Stationery,INV-0128,Operations,Mobile Money
+T00373,2024-04-08,ZimBuild Materials,EMP007,36254.9,ZIG,Packaging materials,INV-0154,Operations,Cash
+T00374,2023-10-25,Gweru Components,EMP003,30960.19,ZIG,Office supplies,INV-0278,Operations,EFT
+T00375,2024-08-19,Gweru Components,EMP007,25764.59,USD,Workshop tools,INV-0217,Procurement,EFT
+T00376,2024-11-17,Shell Vendor B,EMP002,141510.29,USD,Confidential direct award,INV-FRAUD-0375,Procurement,Cheque
+T00377,2024-01-03,Bulawayo Metals Ltd,EMP010,36668.37,ZIG,Workshop tools,INV-0288,Maintenance,Cash
+T00378,2023-10-22,Harare Steel Supplies,EMP007,31243.54,USD,Stationery,INV-0161,Procurement,EFT
+T00379,2024-03-29,Gweru Components,EMP006,37383.26,ZIG,Packaging materials,INV-0101,Finance,Cheque
+T00380,2023-03-18,ZimBuild Materials,EMP009,8576.55,USD,Equipment maintenance,INV-0021,Maintenance,Cheque
+T00381,2024-08-21,Harare Steel Supplies,EMP006,38101.44,ZIG,Safety equipment,INV-0021,Finance,Cheque
+T00382,2024-10-02,Gweru Components,EMP005,27779.27,ZIG,Safety equipment,INV-0282,Operations,EFT
+T00383,2023-08-14,Shell Vendor B,EMP002,43073.05,ZIG,Workshop tools,INV-0213,Maintenance,EFT
+T00384,2024-11-10,Chitungwiza Parts,EMP005,15068.38,ZIG,Factory consumables,INV-0272,Maintenance,EFT
+T00385,2023-09-04,Mutare Fabricators,EMP010,40721.44,USD,Factory consumables,INV-0165,Maintenance,EFT
+T00386,2023-10-17,Shell Vendor B,EMP006,1306.82,ZIG,Workshop tools,INV-0229,Maintenance,EFT
+T00387,2023-11-25,Bulawayo Metals Ltd,EMP003,23222.48,ZIG,Workshop tools,INV-0004,Procurement,Cash
+T00388,2024-03-10,African Procurement Co,EMP009,37637.8,USD,Stationery,INV-0079,Procurement,Mobile Money
+T00389,2023-03-17,Bulawayo Metals Ltd,EMP005,5500.0,USD,Workshop tools,INV-0123,Finance,Cheque
+T00390,2024-02-19,Harare Steel Supplies,EMP007,19599.52,ZIG,Equipment maintenance,INV-0004,Procurement,EFT
+T00391,2024-05-29,Gweru Components,EMP005,4954.87,USD,Packaging materials,INV-0145,Maintenance,Mobile Money
+T00392,2024-04-30,African Procurement Co,EMP003,7203.29,ZIG,Stationery,INV-0152,Finance,Cheque
+T00393,2024-10-25,Harare Steel Supplies,EMP009,16916.25,ZIG,Workshop tools,INV-0064,Procurement,EFT
+T00394,2024-07-14,Msasa Trading,EMP004,42624.68,ZIG,Spare parts,INV-0212,Finance,Cash
+T00395,2023-09-16,ZimBuild Materials,EMP010,8905.81,ZIG,Raw materials purchase,INV-0237,Procurement,Cheque
+T00396,2023-07-22,Shell Vendor A,EMP006,32706.4,ZIG,Spare parts,INV-0121,Procurement,Cheque
+T00397,2023-11-22,Chitungwiza Parts,EMP010,21966.58,ZIG,Cleaning materials,INV-0079,Operations,Cheque
+T00398,2023-11-17,African Procurement Co,EMP007,11228.65,USD,Cleaning materials,INV-0069,Operations,Mobile Money
+T00399,2023-11-09,Bulawayo Metals Ltd,EMP003,22016.32,USD,Packaging materials,INV-0144,Finance,Cash
+T00400,2023-03-20,Harare Steel Supplies,EMP009,32788.66,ZIG,Raw materials purchase,INV-0297,Maintenance,Cash
+T00401,2024-07-10,Shell Vendor B,EMP008,40250.57,USD,Office supplies,INV-0201,Finance,Cheque
+T00402,2023-04-03,Shell Vendor B,EMP001,17975.98,ZIG,Factory consumables,INV-0085,Finance,Mobile Money
+T00403,2024-08-02,ZimBuild Materials,EMP008,29741.72,USD,Spare parts,INV-0113,Maintenance,Cash
+T00404,2023-02-13,Shell Vendor B,EMP002,307000.0,USD,Sole source no tender required,INV-FRAUD-0403,Procurement,EFT
+T00405,2024-06-17,Msasa Trading,EMP005,28583.8,ZIG,Packaging materials,INV-0292,Finance,Mobile Money
+T00406,2024-10-31,Bulawayo Metals Ltd,EMP009,40440.55,USD,Cleaning materials,INV-0115,Maintenance,Cheque
+T00407,2024-05-08,Harare Steel Supplies,EMP009,39945.3,USD,Office supplies,INV-0085,Finance,EFT
+T00408,2023-06-03,Chitungwiza Parts,EMP010,8573.37,ZIG,Equipment maintenance,INV-0213,Operations,EFT
+T00409,2023-08-04,Gweru Components,EMP007,26667.43,ZIG,Raw materials purchase,INV-0023,Finance,Cash
+T00410,2024-08-09,ZimBuild Materials,EMP005,6779.56,ZIG,Office supplies,INV-0208,Procurement,Cheque
+T00411,2024-09-13,Shell Vendor A,EMP003,44676.36,USD,Factory consumables,INV-0074,Finance,Cheque
+T00412,2024-04-09,Bulawayo Metals Ltd,EMP004,26924.69,USD,Stationery,INV-0068,Procurement,EFT
+T00413,2024-05-31,ZimBuild Materials,EMP010,30859.68,ZIG,Equipment maintenance,INV-0244,Procurement,EFT
+T00414,2024-09-09,Harare Steel Supplies,EMP007,24360.01,USD,Workshop tools,INV-0190,Procurement,Mobile Money
+T00415,2024-01-26,Kwekwe Foundry,EMP010,15903.2,USD,Equipment maintenance,INV-0069,Operations,Mobile Money
+T00416,2023-03-27,Shell Vendor B,EMP007,12890.35,ZIG,Cleaning materials,INV-0003,Procurement,EFT
+T00417,2023-07-30,Chitungwiza Parts,EMP007,31011.95,USD,Spare parts,INV-0080,Maintenance,Cheque
+T00418,2024-08-01,Msasa Trading,EMP007,16580.86,USD,Factory consumables,INV-0283,Maintenance,Cash
+T00419,2023-09-17,Mutare Fabricators,EMP006,44485.17,ZIG,Stationery,INV-0061,Finance,Mobile Money
+T00420,2023-04-13,H@rare Steel Supplies,EMP006,9807.72,ZIG,Workshop tools,INV-0027,Finance,Mobile Money
+T00421,2023-04-04,African Procurement Co,EMP010,5500.0,USD,Stationery,INV-0042,Operations,Cash
+T00422,2024-01-29,H@rare Steel Supplies,EMP010,41894.69,USD,Workshop tools,INV-0030,Finance,Mobile Money
+T00423,2024-11-03,Shell Vendor B,EMP005,41897.98,USD,Factory consumables,INV-0262,Finance,Cash
+T00424,2024-11-01,ZimBuild Materials,EMP002,212.87,USD,Cleaning materials,INV-0181,Maintenance,Mobile Money
+T00425,2023-03-12,Shell Vendor B,EMP005,41379.15,ZIG,Workshop tools,INV-0179,Operations,Cheque
+T00426,2024-04-10,Mutare Fabricators,EMP001,41851.18,ZIG,Cleaning materials,INV-0209,Procurement,EFT
+T00427,2023-04-30,Msasa Trading,EMP009,36171.81,USD,Packaging materials,INV-0227,Maintenance,Mobile Money
+T00428,2024-04-14,Mutare Fabricators,EMP001,30735.44,USD,Safety equipment,INV-0133,Procurement,Mobile Money
+T00429,2024-11-24,Chitungwiza Parts,EMP007,31612.69,ZIG,Spare parts,INV-0275,Procurement,Cheque
+T00430,2024-11-20,Chitungwiza Parts,EMP002,33745.71,ZIG,Workshop tools,INV-0244,Operations,Cheque
+T00431,2023-07-07,Gweru Components,EMP004,42630.89,ZIG,Safety equipment,INV-0121,Finance,Cheque
+T00432,2023-09-13,Chitungwiza Parts,EMP003,37667.8,USD,Equipment maintenance,INV-0041,Maintenance,EFT
+T00433,2023-02-13,Chitungwiza Parts,EMP010,38190.87,USD,Spare parts,INV-0295,Operations,Mobile Money
+T00434,2024-06-07,African Procurement Co,EMP010,12755.94,USD,Office supplies,INV-0270,Maintenance,Mobile Money
+T00435,2023-12-22,Chitungwiza Parts,EMP003,12000.0,USD,Safety equipment,INV-0123,Maintenance,Cheque
+T00436,2023-08-04,Msasa Trading,EMP002,12000.0,USD,Spare parts,INV-0123,Operations,Cash
+T00437,2024-04-27,Chitungwiza Parts,EMP006,43142.0,USD,Office supplies,INV-0218,Finance,Mobile Money
+T00438,2024-02-15,ZimBuild Materials,EMP010,12727.4,ZIG,Office supplies,INV-0118,Procurement,Cheque
+T00439,2024-01-26,Kwekwe Foundry,EMP003,8983.63,USD,Safety equipment,INV-0091,Maintenance,Mobile Money
+T00440,2024-10-07,Kwekwe Foundry,EMP006,23361.91,USD,Safety equipment,INV-0129,Procurement,Mobile Money
+T00441,2023-08-09,Shell Vendor A,EMP002,36659.05,USD,Safety equipment,INV-0134,Operations,Cheque
+T00442,2023-09-21,H@rare Steel Supplies,EMP002,15617.48,ZIG,Spare parts,INV-0102,Finance,Cheque
+T00443,2024-05-14,Shell Vendor A,EMP002,34908.55,ZIG,Stationery,INV-0147,Maintenance,Cash
+T00444,2023-12-12,Mutare Fabricators,EMP010,19097.38,USD,Stationery,INV-0041,Finance,Cheque
+T00445,2023-10-26,Mutare Fabricators,EMP007,32027.42,USD,Cleaning materials,INV-0186,Maintenance,Mobile Money
+T00446,2023-05-09,Gweru Components,EMP005,32804.2,ZIG,Equipment maintenance,INV-0086,Maintenance,EFT
+T00447,2024-04-29,Harare Steel Supplies,EMP007,24769.83,USD,Workshop tools,INV-0054,Operations,Cash
+T00448,2024-02-04,African Procurement Co,EMP005,14059.81,ZIG,Safety equipment,INV-0068,Finance,EFT
+T00449,2023-11-30,H@rare Steel Supplies,EMP002,287000.0,USD,Confidential direct award,INV-FRAUD-0448,Finance,Mobile Money
+T00450,2024-07-31,Gweru Components,EMP009,19686.99,USD,Cleaning materials,INV-0247,Finance,EFT
+T00451,2023-09-24,Harare Steel Supplies,EMP001,7176.15,ZIG,Workshop tools,INV-0177,Operations,Mobile Money
+T00452,2024-05-18,Shell Vendor A,EMP005,42623.7,USD,Raw materials purchase,INV-0150,Finance,EFT
+T00453,2024-07-28,African Procurement Co,EMP003,19782.37,USD,Stationery,INV-0113,Operations,EFT
+T00454,2024-09-19,Gweru Components,EMP005,36379.36,ZIG,Cleaning materials,INV-0138,Maintenance,Cash
+T00455,2023-10-24,Shell Vendor A,EMP010,5143.96,USD,Safety equipment,INV-0252,Finance,Cheque
+T00456,2024-07-01,Shell Vendor B,EMP001,489000.0,USD,Sole source no tender required,INV-FRAUD-0455,Procurement,Cash
+T00457,2023-08-11,African Procurement Co,EMP005,12000.0,USD,Safety equipment,INV-0087,Procurement,Cheque
+T00458,2023-05-30,H@rare Steel Supplies,EMP002,2710.52,USD,Workshop tools,INV-0093,Finance,Cheque
+T00459,2023-05-05,Kwekwe Foundry,EMP004,43862.01,USD,Stationery,INV-0127,Procurement,Cash
+T00460,2024-06-17,African Procurement Co,EMP008,30037.15,USD,Stationery,INV-0166,Finance,EFT
+T00461,2023-05-06,Gweru Components,EMP005,11548.41,USD,Factory consumables,INV-0027,Finance,EFT
+T00462,2023-01-16,Msasa Trading,EMP010,7697.74,USD,Equipment maintenance,INV-0125,Procurement,EFT
+T00463,2024-09-02,Bulawayo Metals Ltd,EMP004,7143.64,USD,Office supplies,INV-0047,Operations,EFT
+T00464,2024-07-03,Shell Vendor B,EMP002,810233.49,USD,Sole source no tender required,INV-FRAUD-0463,Finance,EFT
+T00465,2023-05-18,Harare Steel Supplies,EMP008,11431.19,ZIG,Safety equipment,INV-0151,Maintenance,Cash
+T00466,2023-11-28,Msasa Trading,EMP010,33011.63,ZIG,Workshop tools,INV-0036,Finance,Mobile Money
+T00467,2024-01-11,Gweru Components,EMP009,20542.74,ZIG,Stationery,INV-0010,Operations,Cash
+T00468,2024-07-05,African Procurement Co,EMP009,36893.43,ZIG,Safety equipment,INV-0079,Operations,Cheque
+T00469,2023-04-09,Bulawayo Metals Ltd,EMP001,23639.38,ZIG,Office supplies,INV-0017,Finance,EFT
+T00470,2024-08-07,H@rare Steel Supplies,EMP008,28950.47,ZIG,Workshop tools,INV-0132,Procurement,Cheque
+T00471,2023-01-14,African Procurement Co,EMP008,41873.45,USD,Equipment maintenance,INV-0032,Operations,Mobile Money
+T00472,2023-03-01,Msasa Trading,EMP009,37099.2,USD,Raw materials purchase,INV-0156,Procurement,Cash
+T00473,2023-08-25,African Procurement Co,EMP004,24018.42,ZIG,Workshop tools,INV-0292,Finance,Mobile Money
+T00474,2024-08-13,Shell Vendor A,EMP007,16236.76,ZIG,Equipment maintenance,INV-0093,Maintenance,Cheque
+T00475,2024-09-06,Chitungwiza Parts,EMP006,20046.95,USD,Workshop tools,INV-0191,Maintenance,Mobile Money
+T00476,2023-09-04,African Procurement Co,EMP007,25428.88,USD,Workshop tools,INV-0185,Maintenance,Mobile Money
+T00477,2023-02-05,Msasa Trading,EMP001,12000.0,ZIG,Workshop tools,INV-0087,Procurement,Cheque
+T00478,2023-11-19,Kwekwe Foundry,EMP005,1172.22,ZIG,Workshop tools,INV-0285,Finance,EFT
+T00479,2023-05-22,Shell Vendor A,EMP002,331138.98,USD,Advance payment cash only,INV-FRAUD-0478,Procurement,Mobile Money
+T00480,2023-03-21,Shell Vendor A,EMP003,32616.41,ZIG,Safety equipment,INV-0049,Operations,EFT
+T00481,2023-03-22,Chitungwiza Parts,EMP006,35149.46,USD,Stationery,INV-0062,Finance,EFT
+T00482,2023-02-25,Harare Steel Supplies,EMP006,13854.3,ZIG,Workshop tools,INV-0077,Operations,Cash
+T00483,2024-02-07,Mutare Fabricators,EMP010,43702.6,USD,Workshop tools,INV-0114,Maintenance,Cheque
+T00484,2023-12-11,Mutare Fabricators,EMP001,3898.02,USD,Workshop tools,INV-0135,Procurement,Mobile Money
+T00485,2023-05-14,Shell Vendor A,EMP009,34339.07,USD,Factory consumables,INV-0203,Finance,Cash
+T00486,2024-03-16,Mutare Fabricators,EMP002,14688.84,USD,Equipment maintenance,INV-0217,Operations,Cheque
+T00487,2024-11-02,Msasa Trading,EMP003,1284.47,ZIG,Spare parts,INV-0227,Finance,Mobile Money
+T00488,2023-07-24,Shell Vendor A,EMP001,713676.21,USD,Exception waiver approved,INV-FRAUD-0487,Finance,Cheque
+T00489,2023-04-24,Shell Vendor A,EMP001,288000.0,USD,Exception waiver approved,INV-FRAUD-0488,Operations,Mobile Money
+T00490,2024-11-15,Mutare Fabricators,EMP009,1023.81,USD,Raw materials purchase,INV-0088,Procurement,Cheque
+T00491,2023-10-05,Gweru Components,EMP001,2578.22,USD,Equipment maintenance,INV-0139,Operations,EFT
+T00492,2024-10-26,Shell Vendor B,EMP002,441735.75,USD,Emergency procurement no tender,INV-FRAUD-0491,Finance,Cash
+T00493,2023-01-23,Shell Vendor B,EMP005,1980.91,USD,Spare parts,INV-0202,Finance,EFT
+T00494,2024-10-02,Shell Vendor B,EMP005,13744.21,USD,Raw materials purchase,INV-0199,Procurement,Cheque
+T00495,2024-02-07,Bulawayo Metals Ltd,EMP007,29630.54,ZIG,Workshop tools,INV-0117,Maintenance,Cash
+T00496,2023-11-16,Chitungwiza Parts,EMP008,40956.15,ZIG,Workshop tools,INV-0106,Finance,Cash
+T00497,2024-06-20,H@rare Steel Supplies,EMP003,40948.41,ZIG,Packaging materials,INV-0163,Procurement,EFT
+T00498,2023-05-30,Chitungwiza Parts,EMP007,32773.16,USD,Stationery,INV-0227,Operations,Cash
+T00499,2023-07-09,Mutare Fabricators,EMP010,1373.68,ZIG,Cleaning materials,INV-0291,Finance,Cash
+T00500,2023-03-23,African Procurement Co,EMP003,8750.0,ZIG,Workshop tools,INV-0087,Operations,Cash

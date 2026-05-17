@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pandas
+scikit-learn
+networkx
+python-multipart
+fuzzywuzzy
+python-Levenshtein
+sqlalchemy
+passlib[bcrypt]
+python-jose[cryptography]
+reportlab
+requests
+openpyxl
+numpy
+python-dotenv
