@@ -77,13 +77,12 @@ Vercel is the industry standard for deploying React apps.
 1. Create a free account on [Vercel](https://vercel.com/).
 2. Click **Add New... -> Project**.
 3. Import your GitHub repository.
-4. In the configuration screen:
-   - **Framework Preset:** `Create React App` (should be auto-detected).
-   - **Root Directory:** Edit this and select the `frontend` folder.
+4. **Vercel will now automatically detect your frontend!** (I have added a `vercel.json` file to the root of the project which handles the build configuration for you).
+5. In the Vercel configuration screen, just add one thing:
    - **Environment Variables:**
      - Key: `REACT_APP_API_URL`
      - Value: `https://forensic-api-xyz.onrender.com` *(Paste the URL Render gave you in Step 2. Do not put a trailing slash `/` at the end).*
-5. Click **Deploy**.
+6. Click **Deploy**.
 
 Vercel build times are usually 1-2 minutes. Once finished, you will get a live URL (e.g., `https://forensic-frontend.vercel.app`).
 

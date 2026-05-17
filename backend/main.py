@@ -34,7 +34,7 @@ app = FastAPI(title="Forensic Analytics API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["*"],  # Allows Vercel frontend to connect
     allow_methods=["*"],
     allow_headers=["*"],
 )
