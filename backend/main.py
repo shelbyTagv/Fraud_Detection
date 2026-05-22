@@ -24,6 +24,7 @@ from analysis.ml_anomaly import run_ml_anomaly_detection
 from analysis.network import run_network_analysis
 from analysis.duplicates import run_duplicate_detection
 from analysis.nlp_scan import run_nlp_scan
+from analysis.journal_entry import run_journal_entry_testing
 from utils.currency import get_exchange_rates, normalise_to_usd
 from utils.pdf_export import generate_pdf_report
 
@@ -39,8 +40,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 # --- AUTH CONFIG ---
-SECRET_KEY = "forensic-analytics-secret-key-hit-2026"
+SECRET_KEY = os.getenv("SECRET_KEY", "forensic-analytics-hit-2026-secret-key")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 8  # 8 hours
 
@@ -111,72 +117,78 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
 
 
 # --- PERFORMANCE MATRIX GENERATOR ---
-def generate_performance_matrix(benford, ml, network, duplicates, nlp) -> dict:
+def generate_performance_matrix(benford, ml, network, duplicates, nlp, journal) -> dict:
     """
-    Automatically generates the Fraud Type-Technique Performance Matrix
-    based on actual results from all 5 techniques.
-    Each cell rates how effective that technique is for that fraud type:
-    HIGH, MEDIUM, or LOW — derived from actual detection results.
+    Automatically generates the Fraud Type-Technique Performance Matrix.
+    Base ratings match the F1-scores from Table 4.10 of the research document.
+    Ratings are upgraded when a technique actually finds something in this run.
     """
 
-    # Base effectiveness ratings (from academic literature in the research document)
-    # These are then adjusted based on what was actually found in this dataset
+    # Base ratings derived directly from Table 4.10 experimental F1-scores
+    # HIGH = F1 > 0.75,  MEDIUM = F1 0.55-0.75,  LOW = F1 < 0.55
     matrix = {
         "Procurement Fraud": {
-            "benford": "HIGH",
-            "ml": "HIGH",
-            "network": "HIGH",
-            "duplicates": "HIGH",
-            "nlp": "MEDIUM"
+            "benford":    "HIGH",    # F1=0.82
+            "ml":         "HIGH",    # F1=0.85
+            "network":    "HIGH",    # F1=0.86 — best for this type
+            "duplicates": "HIGH",    # F1=0.87
+            "nlp":        "MEDIUM",  # F1=0.71
+            "journal":    "MEDIUM"   # F1=0.66
         },
         "Payroll Fraud": {
-            "benford": "MEDIUM",
-            "ml": "HIGH",
-            "network": "MEDIUM",
-            "duplicates": "HIGH",
-            "nlp": "LOW"
+            "benford":    "LOW",     # F1=0.43
+            "ml":         "HIGH",    # F1=0.83
+            "network":    "MEDIUM",  # F1=0.64
+            "duplicates": "HIGH",    # F1=0.84 — best for this type
+            "nlp":        "LOW",     # F1=0.34
+            "journal":    "LOW"      # F1=0.47
         },
         "Inventory Manipulation": {
-            "benford": "HIGH",
-            "ml": "MEDIUM",
-            "network": "LOW",
-            "duplicates": "LOW",
-            "nlp": "LOW"
+            "benford":    "HIGH",    # F1=0.79
+            "ml":         "MEDIUM",  # F1=0.71
+            "network":    "LOW",     # F1=0.38
+            "duplicates": "LOW",     # F1=0.31
+            "nlp":        "LOW",     # F1=0.29
+            "journal":    "MEDIUM"   # F1=0.70
         },
         "Financial Statement Fraud": {
-            "benford": "HIGH",
-            "ml": "MEDIUM",
-            "network": "MEDIUM",
-            "duplicates": "LOW",
-            "nlp": "MEDIUM"
+            "benford":    "HIGH",    # F1=0.81
+            "ml":         "MEDIUM",  # F1=0.74
+            "network":    "MEDIUM",  # F1=0.67
+            "duplicates": "LOW",     # F1=0.28
+            "nlp":        "MEDIUM",  # F1=0.68
+            "journal":    "HIGH"     # F1=0.84 — best for this type
         },
-        "Shell Company Fraud": {
-            "benford": "LOW",
-            "ml": "MEDIUM",
-            "network": "HIGH",
-            "duplicates": "HIGH",
-            "nlp": "MEDIUM"
+        "Currency / Exchange Rate Fraud": {
+            "benford":    "MEDIUM",  # F1=0.61
+            "ml":         "HIGH",    # F1=0.82 — best for this type
+            "network":    "MEDIUM",  # F1=0.62
+            "duplicates": "MEDIUM",  # F1=0.57
+            "nlp":        "LOW",     # F1=0.41
+            "journal":    "LOW"      # F1=0.44
         }
     }
 
-    # Upgrade ratings if this specific run actually found things
+    # Upgrade ratings when this specific run actually found things
     if benford.get("suspicious"):
         matrix["Financial Statement Fraud"]["benford"] = "HIGH"
-        matrix["Inventory Manipulation"]["benford"] = "HIGH"
+        matrix["Inventory Manipulation"]["benford"]    = "HIGH"
 
     if ml.get("flagged_count", 0) > 10:
-        for fraud_type in matrix:
-            matrix[fraud_type]["ml"] = "HIGH"
+        matrix["Currency / Exchange Rate Fraud"]["ml"] = "HIGH"
 
     if network.get("suspicious_node_count", 0) > 3:
-        matrix["Shell Company Fraud"]["network"] = "HIGH"
-        matrix["Procurement Fraud"]["network"] = "HIGH"
+        matrix["Procurement Fraud"]["network"]            = "HIGH"
+        matrix["Currency / Exchange Rate Fraud"]["network"] = "HIGH"
 
     if duplicates.get("total_issues", 0) > 3:
         matrix["Procurement Fraud"]["duplicates"] = "HIGH"
 
     if nlp.get("flagged_count", 0) > 5:
         matrix["Procurement Fraud"]["nlp"] = "HIGH"
+
+    if journal.get("flagged_count", 0) > 5:
+        matrix["Financial Statement Fraud"]["journal"] = "HIGH"
 
     return matrix
 
@@ -268,11 +280,14 @@ async def analyse(
     network = run_network_analysis(df)
     duplicates = run_duplicate_detection(df)
     nlp = run_nlp_scan(df)
+    journal = run_journal_entry_testing(df)
 
-    # Generate performance matrix automatically
-    matrix = generate_performance_matrix(benford, ml, network, duplicates, nlp)
+    # Generate performance matrix — now includes journal entry results
+    matrix = generate_performance_matrix(
+        benford, ml, network, duplicates, nlp, journal
+    )
 
-    # Build combined risk table (cross-technique)
+    # Build combined risk table
     duplicate_ids = [d["transaction_id"] for d in duplicates.get("exact_duplicates", [])]
     combined = build_combined_risk_table(
         df,
@@ -282,26 +297,29 @@ async def analyse(
         duplicate_ids
     )
 
-    # Calculate overall risk
-    risks = [benford.get("risk"), ml.get("risk"), network.get("risk"),
-             duplicates.get("risk"), nlp.get("risk")]
+    # Count HIGH risk techniques to determine overall risk
+    risks = [
+        benford.get("risk"), ml.get("risk"), network.get("risk"),
+        duplicates.get("risk"), nlp.get("risk"), journal.get("risk")
+    ]
     high_count = risks.count("HIGH")
     overall_risk = "HIGH" if high_count >= 3 else "MEDIUM" if high_count >= 1 else "LOW"
 
     results = {
-        "filename": file.filename,
-        "total_rows": len(df),
-        "overall_risk": overall_risk,
-        "exchange_rate_source": rate_result["source"],
-        "zig_rate_used": rate_result["rates"].get("ZIG", "N/A"),
-        "exchange_rates_used": rate_result["rates"],
-        "benford": benford,
-        "ml_anomalies": ml,
-        "network": network,
-        "duplicates": duplicates,
-        "nlp": nlp,
-        "performance_matrix": matrix,
-        "combined_risk_table": combined
+        "filename":              file.filename,
+        "total_rows":            len(df),
+        "overall_risk":          overall_risk,
+        "exchange_rate_source":  rate_result["source"],
+        "zig_rate_used":         rate_result["rates"].get("ZIG", "N/A"),
+        "exchange_rates_used":   rate_result["rates"],
+        "benford":               benford,
+        "ml_anomalies":          ml,
+        "network":               network,
+        "duplicates":            duplicates,
+        "nlp":                   nlp,
+        "journal":               journal,
+        "performance_matrix":    matrix,
+        "combined_risk_table":   combined
     }
 
     # Save to database
