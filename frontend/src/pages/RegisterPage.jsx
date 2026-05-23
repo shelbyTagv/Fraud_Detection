@@ -48,6 +48,10 @@ export default function RegisterPage({ onRegistered, onGoLogin }) {
 
       <div className="auth-right">
         <div className="auth-card">
+          <div className="auth-mobile-logo">
+            <div className="auth-brand-icon" style={{ width: 38, height: 38, fontSize: 18, borderRadius: 8 }}>🔍</div>
+            <span className="auth-brand-name" style={{ color: "var(--blue-deep)", fontSize: 18, fontWeight: 700, fontFamily: "var(--mono)", marginLeft: 10 }}>ForensicAI</span>
+          </div>
           <div className="auth-card-title">Create account</div>
           <div className="auth-card-sub">Fill in your details to get started</div>
           {error   && <div className="msg msg-error">⚠ {error}</div>}
