@@ -1,7 +1,14 @@
 // All API calls go through this file.
 // Token is stored in localStorage and sent with every request.
+const getBaseUrl = () => {
+  if (process.env.REACT_APP_API_URL) {
+    return process.env.REACT_APP_API_URL;
+  }
+  const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
+  return `http://${hostname}:8000`;
+};
 
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const BASE_URL = getBaseUrl();
 
 function getToken() {
   return localStorage.getItem("token");
