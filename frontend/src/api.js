@@ -4,8 +4,7 @@ const getBaseUrl = () => {
   if (process.env.REACT_APP_API_URL) {
     return process.env.REACT_APP_API_URL;
   }
-  const hostname = typeof window !== "undefined" ? window.location.hostname : "localhost";
-  return `http://${hostname}:8000`;
+  return "https://fraud-detection-1qg5.onrender.com";
 };
 
 const BASE_URL = getBaseUrl();
