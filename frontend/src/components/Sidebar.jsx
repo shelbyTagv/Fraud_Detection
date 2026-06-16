@@ -10,16 +10,9 @@ const MAIN_NAV = [
 // Technique pages — only visible after an analysis has been run
 // key must match what AnalysisPage uses for activeResultPage
 const TECHNIQUE_NAV = [
-  { key: "data_overview", icon: "📁", label: "Data Overview",        riskKey: null },
-  { key: "benford",       icon: "📊", label: "Benford's Law",        riskKey: "benford" },
-  { key: "ml",            icon: "🤖", label: "XGBoost ML",           riskKey: "ml_anomalies" },
-  { key: "network",       icon: "🕸",  label: "Network Analysis",     riskKey: "network" },
-  { key: "duplicates",    icon: "📋", label: "Duplicate Detection",   riskKey: "duplicates" },
-  { key: "nlp",           icon: "🔤", label: "NLP Keyword Scan",      riskKey: "nlp" },
-  { key: "journal",       icon: "📒", label: "Journal Entry Testing", riskKey: "journal" },
-  { key: "matrix",        icon: "📈", label: "Performance Matrix",    riskKey: null },
-  { key: "risk",          icon: "⚠️", label: "Risk Table",            riskKey: null },
-  { key: "maturity",      icon: "🎯", label: "Maturity Model",        riskKey: null },
+  { key: "data_overview", icon: "📁", label: "Data Overview",  riskKey: null },
+  { key: "benford",       icon: "📊", label: "Benford's Law",  riskKey: "benford" },
+  { key: "ml",            icon: "🤖", label: "XGBoost ML",     riskKey: "ml_anomalies" },
 ];
 
 // Maps a risk level to a badge colour class

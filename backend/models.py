@@ -20,8 +20,5 @@ class AnalysisResult(Base):
     benford_mad = Column(Float)
     benford_conformity = Column(String)
     ml_flagged_count = Column(Integer)
-    network_suspicious_nodes = Column(Integer)
-    duplicates_found = Column(Integer)
-    nlp_flagged_count = Column(Integer)
     full_results_json = Column(Text)  # store full JSON as text
     created_at = Column(DateTime(timezone=True), server_default=func.now())

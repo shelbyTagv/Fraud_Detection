@@ -2,13 +2,6 @@ import UploadPanel     from "../components/UploadPanel";
 import SummaryCards    from "../components/SummaryCards";
 import BenfordPanel    from "../components/BenfordPanel";
 import MLPanel         from "../components/MLPanel";
-import NetworkPanel    from "../components/NetworkPanel";
-import DuplicatesPanel from "../components/DuplicatesPanel";
-import NLPPanel        from "../components/NLPPanel";
-import JournalPanel    from "../components/JournalPanel";
-import MatrixPanel     from "../components/MatrixPanel";
-import RiskTable       from "../components/RiskTable";
-import MaturityPanel   from "../components/MaturityPanel";
 import DataOverviewPage from "./DataOverviewPage";
 
 import { useState }    from "react";
@@ -43,7 +36,7 @@ export default function AnalysisPage({
           <h2 className="page-title">Run Analysis</h2>
           <p className="page-subtitle">
             Upload a CSV file of financial transactions to scan for fraud
-            using six validated forensic analytics techniques.
+            using two validated forensic analytics techniques.
           </p>
         </div>
       )}
@@ -76,27 +69,6 @@ export default function AnalysisPage({
           )}
           {activeResultPage === "ml" && (
             <MLPanel data={results.ml_anomalies} />
-          )}
-          {activeResultPage === "network" && (
-            <NetworkPanel data={results.network} />
-          )}
-          {activeResultPage === "duplicates" && (
-            <DuplicatesPanel data={results.duplicates} />
-          )}
-          {activeResultPage === "nlp" && (
-            <NLPPanel data={results.nlp} />
-          )}
-          {activeResultPage === "journal" && (
-            <JournalPanel data={results.journal} />
-          )}
-          {activeResultPage === "matrix" && (
-            <MatrixPanel data={results.performance_matrix} />
-          )}
-          {activeResultPage === "risk" && (
-            <RiskTable data={results.combined_risk_table} />
-          )}
-          {activeResultPage === "maturity" && (
-            <MaturityPanel results={results} />
           )}
 
           {/* Fallback if no technique selected yet */}

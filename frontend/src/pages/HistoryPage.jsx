@@ -49,14 +49,6 @@ export default function HistoryPage() {
                   <div className="history-stat-label">ML Flagged</div>
                   <div className="history-stat-value">{r.ml_flagged_count}</div>
                 </div>
-                <div className="history-stat">
-                  <div className="history-stat-label">Duplicates</div>
-                  <div className="history-stat-value">{r.duplicates_found}</div>
-                </div>
-                <div className="history-stat">
-                  <div className="history-stat-label">NLP Flags</div>
-                  <div className="history-stat-value">{r.nlp_flagged_count}</div>
-                </div>
               </div>
               <div className="history-card-footer">
                 <span style={{fontSize:12,color:"var(--text-muted)",fontFamily:"var(--mono)"}}>{r.benford_conformity || "—"}</span>

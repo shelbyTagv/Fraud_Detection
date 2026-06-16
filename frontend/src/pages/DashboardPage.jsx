@@ -3,12 +3,8 @@ import { apiGetHistory } from "../api";
 import { useEffect, useState } from "react";
 
 const TECHNIQUE_CARDS = [
-  { icon: "📊", name: "Benford's Law",         f1: "0.79", best: "Financial Statement Fraud" },
-  { icon: "🤖", name: "XGBoost ML",            f1: "0.85", best: "Currency Fraud" },
-  { icon: "🕸",  name: "Network Analysis",      f1: "0.81", best: "Procurement Fraud" },
-  { icon: "📋", name: "Duplicate Detection",   f1: "0.83", best: "Payroll Fraud" },
-  { icon: "🔤", name: "NLP Keyword Scan",      f1: "0.62", best: "Procurement Fraud" },
-  { icon: "📒", name: "Journal Entry Testing", f1: "0.71", best: "Financial Statement Fraud" },
+  { icon: "📊", name: "Benford's Law", f1: "0.79", best: "Financial Statement Fraud" },
+  { icon: "🤖", name: "XGBoost ML",    f1: "0.85", best: "Currency / Procurement Fraud" },
 ];
 
 export default function DashboardPage({ onNavigateAnalysis, onNavigateHistory, lastResults, historyCount }) {
@@ -31,7 +27,7 @@ export default function DashboardPage({ onNavigateAnalysis, onNavigateHistory, l
         <div style={{position:"relative"}}>
           <div style={{fontSize:13,opacity:0.7,marginBottom:6,fontFamily:"var(--mono)"}}>Good day, {user?.username}</div>
           <h2 style={{fontSize:26,fontWeight:700,marginBottom:8,letterSpacing:"-0.5px"}}>Forensic Analytics Dashboard</h2>
-          <p style={{fontSize:13,opacity:0.75,maxWidth:480}}>Upload a financial transactions CSV to scan for fraud using six validated forensic analytics techniques. Results are saved automatically.</p>
+          <p style={{fontSize:13,opacity:0.75,maxWidth:480}}>Upload a financial transactions CSV to scan for fraud using two validated forensic analytics techniques. Results are saved automatically.</p>
           <div style={{marginTop:20,display:"flex",gap:10}}>
             <button className="btn btn-success" onClick={onNavigateAnalysis}>⬡ Run New Analysis</button>
             <button className="btn" style={{background:"rgba(255,255,255,0.12)",color:"white",border:"1px solid rgba(255,255,255,0.2)"}} onClick={onNavigateHistory}>◷ View History ({recentCount})</button>
@@ -46,7 +42,7 @@ export default function DashboardPage({ onNavigateAnalysis, onNavigateHistory, l
           {label:"Total Analyses Run",  value:recentCount,  icon:"◷"},
           {label:"Detection Advantage", value:"35.9pp",     icon:"↑"},
           {label:"Best ML F1 Score",    value:"0.85",       icon:"⬡"},
-          {label:"Techniques Active",   value:"6",          icon:"✦"},
+          {label:"Techniques Active",   value:"2",          icon:"✦"},
         ].map((s,i) => (
           <div className="card" key={i} style={{padding:"18px 20px"}}>
             <div style={{fontSize:22,marginBottom:8}}>{s.icon}</div>
@@ -71,11 +67,8 @@ export default function DashboardPage({ onNavigateAnalysis, onNavigateHistory, l
           </div>
           <div style={{display:"flex",gap:24,flexWrap:"wrap"}}>
             {[
-              {label:"ML Flagged",   val:lastResults.ml_anomalies?.flagged_count},
-              {label:"Duplicates",   val:lastResults.duplicates?.total_issues},
-              {label:"NLP Flags",    val:lastResults.nlp?.flagged_count},
-              {label:"Network Hubs", val:lastResults.network?.suspicious_node_count},
-              {label:"Journal Flags",val:lastResults.journal?.flagged_count},
+              {label:"ML Flagged",  val:lastResults.ml_anomalies?.flagged_count},
+              {label:"Benford MAD", val:lastResults.benford?.mad},
             ].map((s,i) => (
               <div key={i}>
                 <div style={{fontFamily:"var(--mono)",fontSize:20,fontWeight:600,color:"var(--text-primary)"}}>{s.val ?? "—"}</div>

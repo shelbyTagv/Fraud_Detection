@@ -21,10 +21,6 @@ import models
 from database import engine, get_db, SessionLocal
 from analysis.benfords import run_benfords_analysis
 from analysis.ml_anomaly import run_ml_anomaly_detection
-from analysis.network import run_network_analysis
-from analysis.duplicates import run_duplicate_detection
-from analysis.nlp_scan import run_nlp_scan
-from analysis.journal_entry import run_journal_entry_testing
 from utils.currency import get_exchange_rates, normalise_to_usd
 from utils.pdf_export import generate_pdf_report
 
@@ -116,137 +112,6 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     return {"access_token": token, "token_type": "bearer", "username": user.username}
 
 
-# --- PERFORMANCE MATRIX GENERATOR ---
-def generate_performance_matrix(benford, ml, network, duplicates, nlp, journal) -> dict:
-    """
-    Automatically generates the Fraud Type-Technique Performance Matrix.
-    Base ratings match the F1-scores from Table 4.10 of the research document.
-    Ratings are upgraded when a technique actually finds something in this run.
-    """
-
-    # Base ratings derived directly from Table 4.10 experimental F1-scores
-    # HIGH = F1 > 0.75,  MEDIUM = F1 0.55-0.75,  LOW = F1 < 0.55
-    matrix = {
-        "Procurement Fraud": {
-            "benford":    "HIGH",    # F1=0.82
-            "ml":         "HIGH",    # F1=0.85
-            "network":    "HIGH",    # F1=0.86 — best for this type
-            "duplicates": "HIGH",    # F1=0.87
-            "nlp":        "MEDIUM",  # F1=0.71
-            "journal":    "MEDIUM"   # F1=0.66
-        },
-        "Payroll Fraud": {
-            "benford":    "LOW",     # F1=0.43
-            "ml":         "HIGH",    # F1=0.83
-            "network":    "MEDIUM",  # F1=0.64
-            "duplicates": "HIGH",    # F1=0.84 — best for this type
-            "nlp":        "LOW",     # F1=0.34
-            "journal":    "LOW"      # F1=0.47
-        },
-        "Inventory Manipulation": {
-            "benford":    "HIGH",    # F1=0.79
-            "ml":         "MEDIUM",  # F1=0.71
-            "network":    "LOW",     # F1=0.38
-            "duplicates": "LOW",     # F1=0.31
-            "nlp":        "LOW",     # F1=0.29
-            "journal":    "MEDIUM"   # F1=0.70
-        },
-        "Financial Statement Fraud": {
-            "benford":    "HIGH",    # F1=0.81
-            "ml":         "MEDIUM",  # F1=0.74
-            "network":    "MEDIUM",  # F1=0.67
-            "duplicates": "LOW",     # F1=0.28
-            "nlp":        "MEDIUM",  # F1=0.68
-            "journal":    "HIGH"     # F1=0.84 — best for this type
-        },
-        "Currency / Exchange Rate Fraud": {
-            "benford":    "MEDIUM",  # F1=0.61
-            "ml":         "HIGH",    # F1=0.82 — best for this type
-            "network":    "MEDIUM",  # F1=0.62
-            "duplicates": "MEDIUM",  # F1=0.57
-            "nlp":        "LOW",     # F1=0.41
-            "journal":    "LOW"      # F1=0.44
-        }
-    }
-
-    # Upgrade ratings when this specific run actually found things
-    if benford.get("suspicious"):
-        matrix["Financial Statement Fraud"]["benford"] = "HIGH"
-        matrix["Inventory Manipulation"]["benford"]    = "HIGH"
-
-    if ml.get("flagged_count", 0) > 10:
-        matrix["Currency / Exchange Rate Fraud"]["ml"] = "HIGH"
-
-    if network.get("suspicious_node_count", 0) > 3:
-        matrix["Procurement Fraud"]["network"]            = "HIGH"
-        matrix["Currency / Exchange Rate Fraud"]["network"] = "HIGH"
-
-    if duplicates.get("total_issues", 0) > 3:
-        matrix["Procurement Fraud"]["duplicates"] = "HIGH"
-
-    if nlp.get("flagged_count", 0) > 5:
-        matrix["Procurement Fraud"]["nlp"] = "HIGH"
-
-    if journal.get("flagged_count", 0) > 5:
-        matrix["Financial Statement Fraud"]["journal"] = "HIGH"
-
-    return matrix
-
-
-# --- COMBINED RISK TABLE ---
-def build_combined_risk_table(df, ml_flagged, benford_suspicious, nlp_flagged, duplicate_ids):
-    """
-    Cross-references all 5 techniques to find transactions flagged by multiple techniques.
-    The more techniques flag a transaction, the higher its overall risk.
-    """
-    risk_map = {}
-
-    # Add ML flagged
-    for t in ml_flagged:
-        tid = t["transaction_id"]
-        if tid not in risk_map:
-            risk_map[tid] = {"transaction_id": tid, "vendor_name": t.get("vendor_name", ""),
-                             "amount_usd": t.get("amount_usd", 0), "techniques": []}
-        risk_map[tid]["techniques"].append("ML Anomaly")
-
-    # Add NLP flagged
-    for t in nlp_flagged:
-        tid = t["transaction_id"]
-        if tid not in risk_map:
-            risk_map[tid] = {"transaction_id": tid, "vendor_name": t.get("vendor_name", ""),
-                             "amount_usd": t.get("amount_usd", 0), "techniques": []}
-        if "NLP Keyword" not in risk_map[tid]["techniques"]:
-            risk_map[tid]["techniques"].append("NLP Keyword")
-
-    # Add duplicate flagged
-    for tid in duplicate_ids:
-        if tid not in risk_map:
-            row = df[df["transaction_id"] == tid]
-            if not row.empty:
-                risk_map[tid] = {
-                    "transaction_id": tid,
-                    "vendor_name": str(row.iloc[0].get("vendor_name", "")),
-                    "amount_usd": float(row.iloc[0].get("amount_usd", 0)),
-                    "techniques": []
-                }
-        if tid in risk_map and "Duplicate" not in risk_map[tid]["techniques"]:
-            risk_map[tid]["techniques"].append("Duplicate")
-
-    # Score and rank
-    result = []
-    for tid, data in risk_map.items():
-        count = len(data["techniques"])
-        result.append({
-            **data,
-            "flagged_by_count": count,
-            "flagged_by": ", ".join(data["techniques"]),
-            "overall_risk": "HIGH" if count >= 3 else "MEDIUM" if count >= 2 else "LOW"
-        })
-
-    result.sort(key=lambda x: x["flagged_by_count"], reverse=True)
-    return result
-
-
 # --- MAIN ANALYSIS ENDPOINT ---
 @app.post("/analyse")
 async def analyse(
@@ -274,52 +139,24 @@ async def analyse(
     rate_result = get_exchange_rates()
     df = normalise_to_usd(df, rate_result["rates"])
 
-    # Run all 5 techniques
+    # Run the 2 forensic analytics techniques
     benford = run_benfords_analysis(df)
     ml = run_ml_anomaly_detection(df)
-    network = run_network_analysis(df)
-    duplicates = run_duplicate_detection(df)
-    nlp = run_nlp_scan(df)
-    journal = run_journal_entry_testing(df)
 
-    # Generate performance matrix — now includes journal entry results
-    matrix = generate_performance_matrix(
-        benford, ml, network, duplicates, nlp, journal
-    )
-
-    # Build combined risk table
-    duplicate_ids = [d["transaction_id"] for d in duplicates.get("exact_duplicates", [])]
-    combined = build_combined_risk_table(
-        df,
-        ml.get("flagged_transactions", []),
-        benford.get("suspicious", False),
-        nlp.get("flagged_transactions", []),
-        duplicate_ids
-    )
-
-    # Count HIGH risk techniques to determine overall risk
-    risks = [
-        benford.get("risk"), ml.get("risk"), network.get("risk"),
-        duplicates.get("risk"), nlp.get("risk"), journal.get("risk")
-    ]
+    # Overall risk is based on these 2 techniques only
+    risks = [benford.get("risk"), ml.get("risk")]
     high_count = risks.count("HIGH")
-    overall_risk = "HIGH" if high_count >= 3 else "MEDIUM" if high_count >= 1 else "LOW"
+    overall_risk = "HIGH" if high_count == 2 else "MEDIUM" if high_count == 1 else "LOW"
 
     results = {
-        "filename":              file.filename,
-        "total_rows":            len(df),
-        "overall_risk":          overall_risk,
-        "exchange_rate_source":  rate_result["source"],
-        "zig_rate_used":         rate_result["rates"].get("ZIG", "N/A"),
-        "exchange_rates_used":   rate_result["rates"],
-        "benford":               benford,
-        "ml_anomalies":          ml,
-        "network":               network,
-        "duplicates":            duplicates,
-        "nlp":                   nlp,
-        "journal":               journal,
-        "performance_matrix":    matrix,
-        "combined_risk_table":   combined
+        "filename":             file.filename,
+        "total_rows":           len(df),
+        "overall_risk":         overall_risk,
+        "exchange_rate_source": rate_result["source"],
+        "zig_rate_used":        rate_result["rates"].get("ZIG", "N/A"),
+        "exchange_rates_used":  rate_result["rates"],
+        "benford":              benford,
+        "ml_anomalies":         ml,
     }
 
     # Save to database
@@ -331,9 +168,6 @@ async def analyse(
         benford_mad=benford.get("mad"),
         benford_conformity=benford.get("conformity"),
         ml_flagged_count=ml.get("flagged_count", 0),
-        network_suspicious_nodes=network.get("suspicious_node_count", 0),
-        duplicates_found=duplicates.get("total_issues", 0),
-        nlp_flagged_count=nlp.get("flagged_count", 0),
         full_results_json=json.dumps(results)
     )
     db.add(db_result)
@@ -364,8 +198,6 @@ def get_history(
             "overall_risk": r.overall_risk,
             "benford_conformity": r.benford_conformity,
             "ml_flagged_count": r.ml_flagged_count,
-            "duplicates_found": r.duplicates_found,
-            "nlp_flagged_count": r.nlp_flagged_count,
             "created_at": r.created_at.strftime("%d %b %Y, %H:%M") if r.created_at else ""
         }
         for r in records

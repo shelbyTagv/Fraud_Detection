@@ -111,15 +111,9 @@ export default function ProfilePage() {
                 <div className="form-group" style={{marginBottom:0}}>
                   <label className="form-label">Default Tab After Analysis</label>
                   <select className="form-select" value={localPrefs.defaultTab} onChange={e => handlePrefChange("defaultTab", e.target.value)}>
+                    <option value="data_overview">Data Overview</option>
                     <option value="benford">Benford's Law</option>
                     <option value="ml">XGBoost ML</option>
-                    <option value="network">Network Analysis</option>
-                    <option value="duplicates">Duplicates</option>
-                    <option value="nlp">NLP Scan</option>
-                    <option value="journal">Journal Entries</option>
-                    <option value="matrix">Performance Matrix</option>
-                    <option value="risk">Risk Table</option>
-                    <option value="maturity">Maturity Model</option>
                   </select>
                 </div>
                 <div className="form-group" style={{marginBottom:0}}>

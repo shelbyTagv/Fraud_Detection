@@ -19,6 +19,17 @@ function authHeaders() {
   };
 }
 
+// Global interceptor to clear stale tokens immediately on 401 Unauthorized
+function checkStatus(res) {
+  if (res.status === 401) {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    window.location.reload();
+  }
+  return res;
+}
+
 export async function apiRegister(username, email, password) {
   const res = await fetch(`${BASE_URL}/auth/register`, {
     method: "POST",
@@ -46,7 +57,8 @@ export async function apiAnalyse(file) {
     method: "POST",
     headers: authHeaders(),
     body: form,
-  });
+  }).then(checkStatus);
+  
   if (!res.ok) {
     const err = await res.json();
     throw new Error(err.detail || "Analysis failed");
@@ -57,14 +69,15 @@ export async function apiAnalyse(file) {
 export async function apiGetHistory() {
   const res = await fetch(`${BASE_URL}/history`, {
     headers: authHeaders(),
-  });
+  }).then(checkStatus);
   return res.json();
 }
 
 export async function apiExportPDF(analysisId) {
   const res = await fetch(`${BASE_URL}/export/${analysisId}`, {
     headers: authHeaders(),
-  });
+  }).then(checkStatus);
+  
   const blob = await res.blob();
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement("a");
